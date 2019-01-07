@@ -1,0 +1,298 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+
+\usepackage{geometry}
+\geometry{a4paper, lmargin=30mm, rmargin=20mm, tmargin=30mm, bmargin=20mm}
+
+\setlength{\parindent}{0mm}
+
+\begin{document}
+
+	\begin{center} \section*{Analysis I - Übungsserie 3} \end{center}
+
+	Übungsgruppe: Jonas Franke \\
+
+
+	Nina Held: 144753 \\
+	Clemens Anschütz: 146390 \\
+	Markus Pawellek: 144645 \\
+
+
+	\subsection*{Aufgabe 1}
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				$(N,e,\nu)$ genüge den Peano Axiomen. Für $n \in N$ soll $A_e = \{e\}$ und $A_{\nu(n)} = A_n \cup \{\nu(n)\}$. \\
+				Für alle $n \in N$ sind Aussagen $B(n)$ gegeben. Dabei soll $B(e)$ wahr sein und gelten, dass wenn für alle $k \in A_n$  $B(k)$ gilt, auch $B(\nu(n))$ wahr ist. \hfill 
+			\item[Behauptung:] \hfill \\
+				Für alle $n \in N$ ist $B(n)$ wahr. \hfill 
+			\item[Beweis:] 
+		\end{description}
+
+		Sei die Menge $L$ definiert als:
+
+		\[ L := \{ n \in N \ | \ \text{für alle } k \in A_n \text{ gilt } B(k) \text{ ist wahr.} \} \]
+
+		Dann gilt wegen $A_e = \{e\}$, dass:
+
+		\[ B(e) \text{ ist wahr. } \Rightarrow \text{für alle } k \in A_e \text{ gilt } B(k) \text{ ist wahr. } \Rightarrow (e \in L) \]
+
+		Nimmt man nun an, dass $n \in L$, folgt aus den Voraussetzungen:
+
+		\[ (n \in L) \Rightarrow \text{für alle } k \in A_n \text{ gilt } B(k) \text{ ist wahr.} \Rightarrow B(\nu(n)) \text{ ist wahr.} \]
+
+		Für $A_{\nu(n)}$ gilt:
+
+		\[ A_{\nu(n)} = A_n \cup \{\nu(n)\} \]
+
+		Da $n \in L$ gilt, ist für alle $k \in A_n$ $B(k)$ wahr. Jetzt gerade wurde gezeigt, dass dann auch $B(\nu(n))$ wahr ist.
+		Damit ist $B$ auch für alle Elemente aus $A_{\nu(n)}$ wahr.
+
+		\[ \Rightarrow \text{für alle } k \in A_{\nu(n)} \text{ gilt } B(k) \text{ ist wahr.} \Rightarrow (\nu(n) \in L) \]
+
+		Damit folgt aufgrund des zweiten Peanoaxioms:
+
+		\[ ((e \in L) \wedge ((n \in L) \Rightarrow (\nu(n) \in L))) \Rightarrow (L=N) \]
+
+		$B(n)$ muss damit für alle $n \in N$ gelten, wenn die Voraussetzungen erfüllt sind. $\hfill \Box$
+
+		\newpage
+
+
+	\subsection*{Aufgabe 2}
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Sei $(B,e,\nu)$ gegeben mit bijektiver Abbildung $\nu:B \longrightarrow B$ und einer Totalordnung $\leq$ mit $n \leq \nu(n)$ für alle $n \in B$. \hfill 
+
+			\item[Behauptung:] \hfill 
+				$(B,\leq)$ ist wohlgeordnet $\Leftrightarrow (B,e,\nu)$ erfüllt das zweite Peanoaxiom. \hfill \\
+
+			\item[Beweis:] 
+		\end{description}
+
+		Beweis: $(B,e,\nu)$ erfüllt das zweite Peanoaxiom $\Rightarrow (B,\leq)$ ist wohlgeordnet.\\
+
+		Annahme: Für eine beliebige Teilmenge T mit $\varnothing \neq T \subseteq B$ existiert kein kleinstes Element.\\
+
+		Sei die Menge $L$ definiert als:
+
+		\[ L := B \setminus T \]
+
+
+		Für ein kleinstes Element $n$ einer beliebigen Menge $M$ muss $n \leq x$ für alle $x \in M$ gelten. Da $n \leq \nu(n)$ darf es also kein Element $k \in M$ geben, für welches $\nu(k) = n$ gilt, weil sonst auch $k \leq n$ gelten würde. Betrachtet man diese Implikation für $B$, so folgt, dass für ein kleinstes Element $n \in B$ für alle $x \in B$ $\nu(x) \neq n$ sein muss. Da $\nu(n)$ eine bijektive Abbildung auf $B\setminus \{e\}$ ist, kann nur $e$ diese Kriterien erfüllen. Damit ist $e$ das kleinste Element von $B$. \\
+
+		Aus diesem Grund kann $e$ kein Element von $T$ sein, da $e$ bezüglich einer Teilmenge von $B$ immer ein kleinstes Element sein muss.
+
+		\[ \neg(e \in T) \Rightarrow (e \in L) \]
+
+		Nimmt man nun an, dass $n \in L$, folgt:
+
+		\[ (n \in L) \Rightarrow \neg(n \in T) \]
+
+		Damit wäre $n$ bezüglich $T$ ein kleinstes Element. Da $n$ aber nun nicht mehr in $T$ vorhanden sein kann, gibt es kein weiteres Element $k \in T$ für welches $\nu(k) = \nu(n)$ ist, da $\nu$ bijektiv ist. Dies kann grundsätzlich für mehrere Elemente in $T$ gelten, aber muss auch zwangsläufig für das kleinste Element gelten, welches vorhanden sein muss, solange dies gilt. Aufgrund der gegebenen Totalordnung lassen sich diese Elemente immer miteinander vergleichen.
+		Damit muss es also unter diesen Elementen immer ein kleinstes Element geben, welches nicht in $T$ sein darf. Dies impliziert, dass alle Elemente, welche durch $\nu(k)$ mit $k \in T$ nicht dargestellt werden können, entfernt werden müssen (Durch Entfernung des Kleinsten taucht wieder ein kleinstes Element auf.)
+
+		\[ \Rightarrow \neg(\nu(n) \in T) \Rightarrow (\nu(n) \in L) \] 
+
+		Nach dem zweiten Peanoaxiom ergibt sich, dass $B = L$. Da $T$ das Komplement der Menge $L$ ist, muss $T$ eine leere Menge sein. Dies ist ein Widerspruch zur Annahme, dass $T$ keine leere Menge ist. Damit muss jede Teilmenge von $B$ ein kleinstes Element enthalten. Damit folgt aus dem zweiten Peanoaxiom, dass $B$ wohlgeordnet ist. \\
+
+		\newpage
+
+		Beweis: $(B,\leq)$ ist wohlgeordnet $\Rightarrow (B,e,\nu)$ erfüllt das zweite Peanoaxiom. \\
+
+		Sei die Menge $M$ definiert als:
+
+		\[ M \subseteq B \]
+		\[ e \in M \]
+		\[ (n \in M) \Rightarrow (\nu(n) \in M) \]
+
+		Zeigt man, dass $M=B$, dann muss das zweite Peanoaxiom gelten. Weiterhin soll $L$ definiert sein als:
+
+		\[ L := B\setminus M \]
+
+		Die Menge $L$ bezeichnet also die Elemente von $B$, welche durch die Voraussetzungen des Peanoaxioms ausgeschlossen werden. Damit ist $L \subseteq B$ und es muss aufgrund der Wohlordnung gelten, dass es ein kleinstes Element $x$ in $L$ geben muss. Wegen $x \neq e$ (da $e \in M$)kann $x$ auch durch $\nu(k)$ für ein $k \in B$ beschrieben werden. Damit kann $k$ also nicht Element von $L$ sein, da dann wegen $k \leq \nu(k)$ noch ein kleineres Element in $L$ existieren würde.
+
+		\[ \Rightarrow (\nu(k) \in L) \Rightarrow \neg(k \in L) \Rightarrow (k \in M) \]
+
+		Aufgrund der Voraussetzung für $M$ gilt dann:
+
+		\[ \Rightarrow (\nu(k) \in M) \]
+
+		Da aber $L$ als Komplement zu $M$ definiert wurde und damit die beiden Mengen disjunkt sind, liegt ein Widerspruch für jedes Element von $L$ vor.
+
+		\[ \Rightarrow (L = \varnothing) \Rightarrow (M = B) \]
+
+		Damit gilt das zweite Peanoaxiom, wenn B wohlgeordnet ist.\\
+
+		Der Beweis wurde für beide Richtungen erbracht. $\hfill\Box$
+
+		\newpage
+
+
+	\subsection*{Aufgabe 3}
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				$(K,+,\cdot)$ ist ein Körper. \hfill 
+
+			\item[Behauptung:] \hfill \\
+				$(-x)\cdot(-y) = x\cdot y$ gilt. \hfill 
+
+			\item[Beweis:] 
+		\end{description}
+
+		In der Vorlesungen wurde folgende Proportion für $x \in K$ bewiesen:
+
+		\[ -x = (-1) \cdot x \]
+
+		Damit gilt also:
+
+		\[ (-x)\cdot(-y) = (-1) \cdot x \cdot (-1) \cdot y \]
+
+		Bezüglich der Multiplikation gilt nach den Körperaxiomen das Kommutativgesetz:
+
+		\[ (-x)\cdot(-y) = (-1) \cdot (-1) \cdot x \cdot  y \]
+
+		Wenn die Behauptung gilt, muss durch Addition mit dem Inversen zur Addition das neutrale Element der Addition (hier $0$) herauskommen.
+
+		\[ x\cdot y + (-(x\cdot y)) = 0 \]
+
+		Setzt man die Behauptung und die Proposition ein, folgt:
+
+		\[ (-1) \cdot (-1) \cdot x \cdot y + (-1)\cdot(x\cdot y) = 0 \]
+
+		Nun wendet man das Distributivgesetz an, welches nach den Körperaxiomen gilt:
+
+		\[ (-1)\cdot x\cdot y \cdot ((-1)+1) = 0 \]
+
+		$-1$ ist das Inverse bezüglich der Addition zu $1$. Damit gilt nach den Axiomen für das inverse Element $(-1) + 1 = 0$.
+
+		\[ (-1)\cdot x\cdot y \cdot 0 = 0 \]
+
+		In der Vorlesung wurde gezeigt, dass folgende Proposition für $x \in K$ gilt:
+
+		\[ x\cdot 0 = 0 \]
+
+		$(-1)\cdot x\cdot y$ ist ein Element von $K$ und kann damit mit einem $z \in K$ gleich gesetzt werden.
+
+		\[ z = (-1)\cdot x\cdot y \]
+
+		Durch Einsetzen folgt:
+
+		\[ z \cdot 0 = 0 \]
+
+		Dies ist eine wahre Aussage, wenn man vorherige Proposition anwendet. Aufgrund der Eindeutigkeit eines inversen Elementes, folgt also, dass $(-x)\cdot(-y)$ das Inverse bezüglich der Addition zu $-(x\cdot y)$ ist. Dies gilt aber auch für $x\cdot y$.
+
+		\[ \Rightarrow (-x)\cdot(-y) = x\cdot y \] 
+		$\hfill\Box$
+
+		\newpage
+
+
+	\subsection*{Aufgabe 4}
+
+
+		Folgende Operationen sollen für $\mathbb{F}_3$ gelten: \\
+
+
+		\begin{figure}[H]
+		\center
+
+		\begin{tabular}[c]{cc}
+			\begin{tabular}[c]{|c||c|c|c|}
+				\hline
+				$+$ & $0$ & $1$ & $2$ \\
+				\hline \hline
+				$0$ & $0$ & $1$ & $2$ \\
+				\hline
+				$1$ & $1$ & $2$ & $0$ \\
+				\hline
+				$2$ & $2$ & $0$ & $1$ \\
+				\hline
+			\end{tabular}
+		
+			&
+
+			\begin{tabular}[c]{|c||c|c|c|}
+				\hline
+				$\cdot$ & $0$ & $1$ & $2$ \\
+				\hline \hline
+				$0$ & $0$ & $0$ & $0$ \\
+				\hline
+				$1$ & $0$ & $1$ & $2$ \\
+				\hline
+				$2$ & $0$ & $2$ & $1$ \\
+				\hline
+			\end{tabular} \\
+
+		\end{tabular}
+
+		\end{figure}
+
+		(In der Tat ist dies auch die einzige Möglichkeit der Operationen, für die $\mathbb{F}_3$ ein Körper ist.)\\
+
+		Dabei soll $0$ das neutrale Element bezüglich der Addition sein. Und $1$ das neutrale Element bezüglich der Multiplikation. Aus den Tabellen wird ersichtlich, dass die Axiome für die neutralen Elemente erfüllt sind. 
+		Die inversen Elemente bezüglich der Addition und der Multiplikation sind ebenfalls gegeben mit $-1 = 2$, $-2 = 1$ und $2^{-1} = 2$ (für die neutralen Elemente muss dies nicht gezeigt werden, da es sich automatisch aus den Axiomen für sie ergibt).
+		Außerdem sieht man anhand der Tabellen, dass beide Operationen kommutativ sind, da durch Austausch von Zeilen und Spalten die Tabellen wieder auf sich selbst abgebildet werden.
+
+
+		Um das Assoziativitätsgesetz für die Addition zu zeigen, muss $0$ nicht betrachtet werden, da durch Addition mit ihr immer das gleiche wie vorher herauskommt.
+
+		\[ 1+(1+2) = (1+1)+2 \]
+		\[ 1+0 = 2+2 \]
+		\[ 1 = 1 \]
+
+		Damit ergibt sich eine wahre Aussage. Aufgrund des Kommutativitätsgesetzes können diese drei Zahlen beliebig untereinander vertauscht werden. Damit ist es also auch gezeigt für $1+(2+1) = (1+2)+1$ und $2+(1+1) = (2+1)+1$.
+
+		\[ 1+(2+2) = (1+2)+2 \]
+		\[ 1+1 = 0+2 \]
+		\[ 2 = 2 \]
+
+		Auch hier ergibt sich eine wahre Aussage. Aufgrund des Kommutativitätsgesetzes können auch diese drei Zahlen beliebig untereinander vertauscht werden. Damit ist es also auch gezeigt für $2+(1+2) = (2+1)+2$ und $2+(2+1) = (2+2)+1$.
+
+		Um das Assoziativitätsgesetz der Multiplikation zu zeigen, muss $0$ nicht betrachte werden, da durch Multiplikation mit $0$ immer alles $0$ wird. Damit gilt für $0$ automatisch die Assoziativität. Auch für $1$ muss es nicht gezeigt werden, da durch Multiplikation mit $1$ immer das gleiche wie vorher herauskommt. Übrig bleibt damit nur die $2$. Diese ist zu sich selbst kommutativ und assoziativ.
+
+		Für das Distributivgesetz muss $0$ aus den beiden oben genannten Gründen nicht beachtet werden. Für $a,b \in K$ gilt:
+
+		\[ 1\cdot (a+b) = 1\cdot a + 1\cdot b \]
+		\[ a+b = a+b \]
+
+		Wahre Aussage.
+		
+		\[ 2\cdot (1+1) = 2\cdot 1 + 2\cdot 1 \]
+		\[ 2\cdot 2 = 2 + 2 \]
+		\[ 1 = 1 \]
+
+		Wahre Aussage.
+
+		\[ 2\cdot (1+2) = 2\cdot 1 + 2\cdot 2 \]
+		\[ 2\cdot 0 = 2+1 \]
+		\[ 0 = 0 \]
+
+		Wahre Aussage. Aufgrund der Kommutativität sind $1$ und $2$ in den Klammern vertauschbar.
+
+		\[ 2\cdot (2+2) = 2\cdot 2 + 2\cdot 2 \]
+		\[ 2\cdot 1 = 1+1 \]
+		\[ 2 = 2 \]
+
+		Wahre Aussage. Damit sind alle Möglichkeiten für das Distributivgesetz gezeigt. Es folgt, dass $\mathbb{F}_3$ ein Körper ist.
+		Für einen angeordneten Körper muss jedes Element in nur einer der Mengen $K^+$, $\{0\}$ oder $\{-x \ | x \in K^+ \}$ vorkommen.
+		Außerdem wurde in der Vorlesung gezeigt, dass $1 \in K^+$ gilt. Des Weiteren gilt:
+
+		\[ (x,y \in K^+) \Rightarrow (x+y \in K^+) \]
+		\[ (x,y \in K^+) \Rightarrow (x\cdot y \in K^+) \]
+
+		Aus diesen Axiomen folgt für $\mathbb{F}_3$:
+
+		\[ (1\in K^+) \Rightarrow (1+1 \in K^+) \Rightarrow (2 \in K^+) \Rightarrow (2+1 \in K^+) \Rightarrow (0 \in K^+) \]
+
+		Damit müsste $0$ sowohl Element von $K^+$ als auch $\{0\}$ sein. Damit würde $0$ als Element in beiden Mengen vorkommen. Dies widerspricht allerdings den Axiomen für einen angeordneten Körper (betrachtete Mengen müssen disjunkt sein). Damit kann $\mathbb{F}_3$ nicht angeordnet werden.
+ 
+
+\end{document}

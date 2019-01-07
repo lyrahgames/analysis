@@ -1,0 +1,518 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+
+\usepackage{geometry}
+\geometry{a4paper, lmargin=30mm, rmargin=30mm, tmargin=30mm, bmargin=30mm}
+\setlength{\parindent}{0mm}
+
+\usepackage[automark]{scrpage2}
+\usepackage{lastpage}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ihead[]{Analysis I - Übungsserie 6 \\ Übungsgruppe: Jonas Franke}
+\ohead[]{Nina Held - 144753\\ Clemens Anschütz - 146390\\ Markus Pawellek - 144645}
+\cfoot[]{\pagemark/\pageref{LastPage}}
+\setheadsepline[\textwidth]{0.5pt}
+
+
+\begin{document}
+	
+	\begin{center}\section*{Analysis - Übungsserie 6}\end{center} % (fold)
+	\label{sec:1}
+	
+	\subsection*{Aufgabe 1} % (fold)
+	\label{sub:aufgabe_1}
+	
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Sei $a > 0$ und für $n\in \mathbb{N}$ definiere \\
+				$a_n= \sqrt{n+a}-\sqrt{n}$ \\
+				$b_n= \sqrt{n+\sqrt{n}}-\sqrt{n}$ \\
+				$c_n= \sqrt{n+\frac{n}{a}}-\sqrt{n}$.
+			\item[Behauptung:] \hfill \\
+				Für alle $n > a^2$ gilt $a_n<b_n<c_n$.
+			\item[Beweis:]
+		\end{description}
+		
+		Seien alle Definitionen wie in den Voraussetzungen und Behauptungen gegeben. Dann gilt:
+		\[
+			n > a^2
+		\]
+		Da sowohl $n$ als auch $a$ größer Null sein müssen, ist es möglich die Wurzel aus beiden Größen zu ziehen, ohne die Ungleichung zu verändern.
+		\[
+			\Rightarrow \ \sqrt{n} > a \ \Rightarrow \ a < \sqrt{n}
+		\]
+		Nun kann man aufgrund der Anordnung der reellen Zahlen zu beiden Seiten der Ungleichung $n$ addieren. Da $n$ positiv ist, muss der Gesamtausdruck also positiv bleiben. Damit lässt auch wieder eine Wurzel ziehen.
+		\[
+			\Rightarrow \ n+a < n+\sqrt{n} \ \Rightarrow  \ \sqrt{n+a} < \sqrt{n+\sqrt{n}}
+		\]
+		Nun subtrahiert man $\sqrt{n}$ auf beiden Seiten und erhält:
+		\[
+			\Rightarrow \ \sqrt{n+a} - \sqrt{n} < \sqrt{n+\sqrt{n}} - \sqrt{n} \ \Rightarrow \ a_n < b_n
+		\]
+		Damit ist die linke Seite der Ungleichung gezeigt. Für die andere gilt wieder:
+		\[
+			n > a^2 \ \Rightarrow \ \sqrt{n} > a
+		\]
+		Nun multipliziert man diese Formel mit $\sqrt{n}$. Da die Wurzel aus $n$ größer Null sein muss, wird dadurch die Ungleichung nicht verändert.
+		\[
+			\Rightarrow \ \sqrt{n}\cdot\sqrt{n} = n > \sqrt{n}\cdot a
+		\]
+		Weiterhin muss das Inverse von $a$ größer Null sein, da $a>0$ gilt. Durch Multiplikation mit dem Inversen von $a$ kann also die Ungleichung ebenfalls nicht verändert werden.
+		\[
+			\Rightarrow \ \dfrac{n}{a} > \sqrt{n}
+		\]
+		Nun lässt sich wieder, wie oben $n$ addieren. Auch hier müssen dann beide Terme positiv bleiben. Damit ist es also auch erlaubt die Wurzel nach der Addition zu ziehen. Zum Schluss subtrahiert man noch $\sqrt{n}$ und erhält:
+		\[
+			\Rightarrow \ n+\dfrac{n}{a} > n + \sqrt{n} \ \Rightarrow \ \sqrt{n+\dfrac{n}{a}} > \sqrt{n + \sqrt{n}}
+		\]
+		\[
+			\Rightarrow \ \sqrt{n+\dfrac{n}{a}} - \sqrt{n} > \sqrt{n + \sqrt{n}} - \sqrt{n} \ \Rightarrow \ c_n > b_n
+		\]
+		Damit ist die rechte Seite der Ungleichung gezeigt.
+		Es gilt also allgemein für $n > a^2$:
+		\[
+			a_n < b_n < c_n
+		\]
+		Damit ist die Aussage unter der Voraussetzung bewiesen. $\hfill\Box$ \\
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Seien die drei Folgen wie gerade eben definiert.
+			\item[Behauptung:] \hfill \\
+				Für $ n\rightarrow \infty$ gilt: \\
+				$a_n\rightarrow 0$ \\
+				$b_n\rightarrow \frac{1}{2}$\\
+				$c_n\rightarrow \infty$
+			\item[Beweis:]
+		\end{description}
+		
+		Allgemeine Betrachtung für alle $a,b \in \mathbb{R}$:
+		\[
+			(a+b)\cdot(a-b) = a\cdot(a-b) + b\cdot(a-b) = a^2 - ab + ab -b^2 = a^2 -b^2
+		\]
+		Es gilt also allgemein für alle $a,b \in \mathbb{R}$ die dritte binomische Formel:
+		\[
+			(a+b)(a-b) = a^2-b^2
+		\]
+		Sei ein $a > 0$. Dann ist aus der Vorlesung bekannt, dass Folgendes gilt:
+		\[
+			\dfrac{a}{n}\longrightarrow 0
+		\]
+		Dies ist gleichbedeutend mit der Aussage, dass es für alle $\varepsilon > 0$ ein $n_{\varepsilon}\in \mathbb{N}$ gibt, sodass für alle $n \geq n_{\varepsilon}$ gilt:
+		\[
+			\left| \dfrac{a}{n} - 0 \right| = \dfrac{a}{n} < \varepsilon
+		\]
+		Aus dieser Ungleichung lässt sich wieder eine Wurzel ziehen, da es sich bei allen Größen um positive Größen handelt.
+		\[
+			\Rightarrow \ \sqrt{\dfrac{a}{n}} > \sqrt{\varepsilon} 
+		\]
+		Sei nun $\varepsilon^\prime := \sqrt{\varepsilon} > 0$ (auch nach Anwendung der Wurzel muss diese Größe positiv bleiben) und $b:=\sqrt{a}>0$. Dann gilt für alle $\varepsilon^\prime > 0$ , dass es ein $n_{\varepsilon}\in \mathbb{N}$ gibt, sodass für alle $n \geq n_{\varepsilon}$ gilt:
+		\[
+			\dfrac{b}{\sqrt{n}} = \left| \dfrac{b}{\sqrt{n}} -0 \right| > \varepsilon^\prime
+		\]
+		Hierbei handelt es sich genau um die Definition eines Grenzwertes. Es gilt also allgemein für $b > 0$ und $n \in \mathbb{N}$:
+		\[
+			\dfrac{b}{\sqrt{n}} \longrightarrow 0
+		\]
+
+		Für die Folge $(a_n)$ gilt also:
+		\[
+			a_n = \sqrt{n+a}-\sqrt{n} = \left(\sqrt{n+a}-\sqrt{n}\right)\cdot \dfrac{\sqrt{n+a}+\sqrt{n}}{\sqrt{n+a}+\sqrt{n}} = \dfrac{\left(\sqrt{n+a}-\sqrt{n}\right)\left(\sqrt{n+a}+\sqrt{n}\right)}{\sqrt{n+a}+\sqrt{n}}
+		\]
+		Durch Anwendung der dritten binomischen Formel im Zähler folgt:
+		\[
+			= \dfrac{\left(\sqrt{n+a}\right)^2-\left(\sqrt{n}\right)^2}{\sqrt{n+a}+\sqrt{n}} = \dfrac{n+a-n}{\sqrt{n+a}+\sqrt{n}} = \dfrac{a}{\sqrt{n+a}+\sqrt{n}}
+		\]
+		Nun gilt allgemein:
+		\[
+			\sqrt{n+a} +\sqrt{n} > \sqrt{n} > 0 \ \Rightarrow \ \dfrac{1}{\sqrt{n+a} +\sqrt{n}} < \dfrac{1}{\sqrt{n}}
+		\]
+		Es folgt, da $a > 0$:
+		\[
+			a_n = \dfrac{a}{\sqrt{n+a}+\sqrt{n}} < \dfrac{a}{\sqrt{n}}
+		\]
+		Weiterhin gilt (auch wieder wegen $a > 0$):
+		\[
+			\sqrt{n+a} > \sqrt{n} \ \Rightarrow \ \sqrt{n+a}-\sqrt{n} = a_n > 0
+		\]
+		Damit ist $0<a_n<a/\sqrt{n}$. Da es sich bei rechten Folge (wie oben gezeigt) um eine gegen Null konvergierende Folge handelt, muss nach dem Sandwich-Theorem also auch
+		\[
+			a_n \longrightarrow 0, n\longrightarrow \infty
+		\]
+		gelten.\\
+		Für die Folge $(b_n)$ soll ähnlicher Algorithmus verwendet werden:
+		\[
+			b_n = \sqrt{n+\sqrt{n}}-\sqrt{n} = \dfrac{\left(\sqrt{n+\sqrt{n}}-\sqrt{n}\right)\left(\sqrt{n+\sqrt{n}}+\sqrt{n}\right)}{\sqrt{n+\sqrt{n}}+\sqrt{n}}
+		\]
+		\[
+			= \dfrac{n+\sqrt{n}-n}{\sqrt{n+\sqrt{n}}+\sqrt{n}} = \dfrac{\sqrt{n}}{\sqrt{n+\sqrt{n}}+\sqrt{n}} 
+		\]
+		Durch Ausklammern von $\sqrt{n}$ im Nenner folgt:
+		\[
+			= \dfrac{\sqrt{n}}{\sqrt{n}\cdot \left(\sqrt{1+\dfrac{1}{\sqrt{n}}}+1\right)} = \dfrac{1}{\sqrt{1+\dfrac{1}{\sqrt{n}}}+1}
+		\]
+		Nun gilt allgemein, da es sich bei $n$ um eine positive Zahl handelt (inverse der Wurzel existiert und muss größer Null sein):
+		\[
+			1+\dfrac{1}{\sqrt{n}} > 1 \ \Rightarrow \ \sqrt{1+\dfrac{1}{\sqrt{n}}} > \sqrt{1} = 1 \ \Rightarrow \ \sqrt{1+\dfrac{1}{\sqrt{n}}} + 1 > 1+1 = 2
+		\]
+		Beide Terme sind wieder größer Null. Bildet man das Inverse dieser beiden Terme, muss sich also das Ungleichheitszeichen umkehren.
+		\[
+			\Rightarrow \ \dfrac{1}{\sqrt{1+\dfrac{1}{\sqrt{n}}}+1} = b_n < \dfrac{1}{2} \ \Rightarrow \ b_n -\dfrac{1}{2} < 0
+		\]
+		Durch Multiplikation mit $-1$ (bzw. auch durch Anwendung der Betragsfunktion) erhält man:
+		\[
+			\Rightarrow \ \dfrac{1}{2}-b_n > 0 	\ \Rightarrow \ b_n < \dfrac{1}{2}
+		\] 
+		Weiterhin gilt aber:
+		\[
+			\dfrac{1}{2}-b_n = \dfrac{1}{2} - \dfrac{1}{\sqrt{1+\dfrac{1}{\sqrt{n}}}+1} = \dfrac{\sqrt{1+\dfrac{1}{\sqrt{n}}}+1 - 2}{2+2\cdot\sqrt{1+\dfrac{1}{\sqrt{n}}}} = \dfrac{\sqrt{1+\dfrac{1}{\sqrt{n}}} - 1}{2+2\cdot\sqrt{1+\dfrac{1}{\sqrt{n}}}}
+		\]
+		Weil $n > 0$ gilt, muss folgen:
+		\[
+			2+2\cdot\sqrt{1+\dfrac{1}{\sqrt{n}}} > 2 > 1 \ \Rightarrow \ \dfrac{1}{2+2\cdot\sqrt{1+\dfrac{1}{\sqrt{n}}}} < 1
+		\]
+		Diese Ungleichung benutzt man für die eben aufgestellte Gleichung:
+		\[
+			\dfrac{1}{2}-b_n = \dfrac{\sqrt{1+\dfrac{1}{\sqrt{n}}} - 1}{2+2\cdot\sqrt{1+\dfrac{1}{\sqrt{n}}}} \ < \ \sqrt{1+\dfrac{1}{\sqrt{n}}} - 1 \ < \  1+\dfrac{1}{\sqrt{n}}-1=\dfrac{1}{\sqrt{n}}
+		\]
+		In der Wurzel der vorletzten Ungleichung, wird $1$ mit dem Inversen der Wurzel von $n$ addiert. Diese Addition muss eine Zahl ergeben, welche größer $1$ ist. Damit muss also das Quadrat dieser Wurzel auch größer als die Wurzel selbst sein.
+		\[
+			\Rightarrow \ \dfrac{1}{2}-b_n < \dfrac{1}{\sqrt{n}} \ \Rightarrow \ \dfrac{1}{2}-\dfrac{1}{\sqrt{n}} < b_n
+		\]
+		Allgemein also:
+		\[
+			\dfrac{1}{2}-\dfrac{1}{\sqrt{n}} < b_n < \dfrac{1}{2}
+		\]
+		Da $1/\sqrt{n} \longrightarrow 0$ gilt muss sowohl die linke als auch die rechte Folge gegen $1/2$ konvergieren. Nach dem Sandwich-Theorem muss also auch
+		\[
+			b_n \longrightarrow \dfrac{1}{2}, n\longrightarrow \infty
+		\]
+		gelten.
+		Für die Folge $(c_n)$ folgt (wieder durch Ausklammern von $\sqrt{n}$):
+
+		\[
+			c_n = \sqrt{n+\frac{n}{a}}-\sqrt{n} = \sqrt{n}\cdot \left( \sqrt{1+\dfrac{1}{a}} -1 \right)
+		\]
+
+		Der rechte Faktor ist unabhängig von $n$. Damit ist er also eine Konstante. Diese Konstante soll mit $m$ substituiert werden.
+
+		\[
+			m := \sqrt{1+\dfrac{1}{a}} -1 > 0
+		\]
+
+		Das Inverse von $a$ muss, weil $a$ positiv ist, größer Null sein. Addiert man nun in der Wurzel eine Zahl größer Null zu $1$ hinzu, so muss die Wurzel ebenfalls größer $1$ sein. Da $m >0 $ aus dieser Betrachtung folgt, ist das Inverse von $m$ (hier $m^{-1}$) ebenfalls größer Null. Es folgt:
+		\[
+			c_n = \sqrt{n}\cdot m = \dfrac{\sqrt{n}}{m^{-1}} > 0
+		\]
+		Damit handelt es sich um das Reziproke der am Anfang behandelten Folge, welche gegen $0$ konvergiert. In der Vorlesung wurde dann gezeigt, dass das Reziproke bestimmt divergent gegen $\infty$ ist. Es gilt also:
+		\[
+			c_n \rightarrow \infty, n \rightarrow \infty
+		\] 
+		$\hfill\Box$
+		
+		\newpage
+
+	% subsection aufgabe_1 (end)
+
+
+	\subsection*{Aufgabe 2} % (fold)
+	\label{sub:aufgabe_2}
+	
+		\subsubsection*{a)} % (fold)
+		\label{ssub:a_}
+		
+			\begin{description}
+				\item[(i):] Für alle $k\in \mathbb{N}$ gibt es ein $n_0 \in \mathbb{N}$, sodass für alle $n \geq n_0$ $\ $ $\ $ $|x_n-x| < \frac{1}{k}$ gilt.
+				\item[(ii):] Für alle $q\in \mathbb{Q}\setminus\{0\}$ gibt es ein $n_0 \in \mathbb{N}$, sodass für alle $n \geq n_0$ $\ $ $\ $ $|x_n-x| < q^2$ gilt.
+				\item[(iii):] Für alle $\varepsilon > 0$ gibt es ein $n_0 \in \mathbb{N}$, sodass für alle $n \geq n_0$ $\ $ $\ $ $|x_n-x| \leq \varepsilon$ gilt.
+				\item[(iv):] Es gibt ein $n_0 \in \mathbb{N}$ für alle $\varepsilon > 0$, sodass für alle $n \geq n_0$ $\ $ $\ $ $|x_n-x| < \varepsilon$ gilt.
+				\item[(v):] Für alle $n_0 \in \mathbb{N}$ gibt es ein $\varepsilon > 0$, sodass für alle $n \geq n_0$ $\ $ $\ $ $|x_n-x| < \varepsilon$ gilt.
+			\end{description}
+
+		% subsubsection a_ (end)
+
+		\subsubsection*{b)} % (fold)
+		\label{ssub:b_}
+		
+			Die Folge $(x_n)$ in $\mathbb{R}$ konvergiert gegen $x \in\mathbb{R}$, wenn zu jedem $\epsilon > 0$ ein $n_{\epsilon} \in \mathbb{N}$ existiert, sodass für alle $n \geq n_{\epsilon} \ \ $ $|x_n-x|<\epsilon$ gilt. Drückt man dies mithilfe von Quantoren aus, folgt:
+
+			\[
+				\forall \  \epsilon > 0 \ \ \ \exists \ n_{\epsilon} \in \mathbb{N} \ \ \ \forall \ n \geq n_{\epsilon} \ \ \ |x_n-x|<\epsilon
+			\]
+
+			\begin{description}
+				\item[(i):] Sei die Aussage wie in a). Dann gilt nach dem Archimedischen Axiom, dass es für alle $\varepsilon > 0$ ein $k\in \mathbb{N}$ mit $\frac{1}{k}<\varepsilon$ gibt. Dann gilt also für ein jeweiliges $\varepsilon$ immer:
+				\[
+					|x_n-x| < \frac{1}{k} < \varepsilon
+				\]
+				Damit gibt es also für alle $\varepsilon > 0$ ein $n_0 \in \mathbb{N}$, sodass für alle $n \geq n_0$ gilt: $|x_n-x| < \varepsilon$. Dies ist äquivalent zur Grenzwertdefinition. Damit muss die Aussage (i) dazu äquivalent sein, dass es sich bei $x$ um einen Grenzwert der Folge $(x_n)$ handelt.
+				
+				\item[(ii):] Sei die Aussage wie in a). Dann gilt für ein $m \in \mathbb{Z}\setminus \{0\}$ und ein $n \in \mathbb{N}$:
+				\[
+					q = \dfrac{m}{n} \ \Rightarrow \ q^2 = \dfrac{m^2}{n^2} 
+				\]
+				Es gilt, dass $m^2 > 0$. Damit lassen sich sowohl $m^2$ als auch $n^2$ mit natürlichen Zahlen substituieren.
+				Betrachtet man wieder das Archimedische Axiom, dann gilt für die gleichen Definitionen wie gerade eben, $\frac{1}{k}<\varepsilon$. Durch Multiplikation mit einer weiteren natürlichen Zahl $p$ folgt:
+				\[
+					\dfrac{p}{k} < p\cdot\varepsilon
+				\]
+				Sei nun ein $\varepsilon^\prime > p\cdot\varepsilon > 0$, dann gilt, wenn man $p:=m^2$ und $k:=n^2$ setzt:
+				\[
+					\dfrac{p}{k} = \dfrac{m^2}{n^2} = q^2 < \varepsilon^\prime \ \Rightarrow \ |x_n-x| < q^2 < \varepsilon^\prime
+				\]
+				Damit gibt es also für alle $\varepsilon^\prime > 0$ ein $n_0 \in \mathbb{N}$, sodass für alle $n \geq n_0$ gilt: $|x_n-x| < \varepsilon^\prime$. Dies ist äquivalent zur Grenzwertdefinition. Damit muss die Aussage (iii) dazu äquivalent sein, dass es sich bei $x$ um einen Grenzwert der Folge $(x_n)$ handelt.
+
+				\item[(iii):] Sei die Aussage wie in a). Dann findet man zu jedem $\varepsilon^\prime > 0$ auch ein $\varepsilon > 0$ mit $\varepsilon < \varepsilon^\prime$. Dann folgt:
+				\[
+					|x_n-x| \leq \varepsilon < \varepsilon^\prime
+				\]
+				Damit gibt es also für alle $\varepsilon^\prime > 0$ ein $n_0 \in \mathbb{N}$, sodass für alle $n \geq n_0$ gilt: $|x_n-x| < \varepsilon^\prime$. Dies ist äquivalent zur Grenzwertdefinition. Damit muss die Aussage (iii) dazu äquivalent sein, dass es sich bei $x$ um einen Grenzwert der Folge $(x_n)$ handelt.
+
+				\item[(iv):] Sei die Aussage wie in a). Dann ist diese Aussage nicht äquivalent zur Grenzwertdefinition. Nimmt man als Beispiel die Folge $1/n$. Dann muss auch für alle $\varepsilon > 0$ gelten:
+				\[
+					\left| \dfrac{1}{n_0} - 0 \right| = \dfrac{1}{n_0} < \varepsilon
+				\]
+				Wählt man allerdings $\varepsilon = 1/2n_0$. Dann gilt:
+				\[
+					\varepsilon < \dfrac{1}{n_0}
+				\]
+				Dies ruft also einen Widerspruch hervor. Damit würde die Folge $1/n$ nach dieser Aussage nicht den Grenzwert Null besitzen. Aber $1/n$ besitzt nach der eigentliche Definition diesen Grenzwert. Die Aussage kann also nicht äquivalent zur Grenzwertdefinition sein.
+
+				\item[(v):] Sei die Aussage wie in a). Dann ist diese Aussage nicht äquivalent zur Grenzwertdefinition. Nimmt man als Beispiel die Folge $(-1)^n$, welche eigentlich keinen Grenzwert besitzt. Dann gilt für alle $n_0 \in \mathbb{N}$:
+				\[
+					|(-1)^{n_0} - 0| < 2
+				\]
+				Damit gibt es also zu jedem $n_0$ ein $\varepsilon > 0$ mit $\varepsilon = 2$, sodass für alle $n \geq n_0$ die Aussage gilt, sofern es sich bei dem Grenzwert um Null handelt. Damit besitzt die Beispielfolge nach dieser Aussage einen Grenzwert. Die Aussage kann also nicht äquivalent zur Grenzwertdefinition sein.
+			\end{description}
+
+		% subsubsection b_ (end)
+
+		\newpage
+
+	% subsection aufgabe_2 (end)
+
+
+	\subsection*{Aufgabe 3} % (fold)
+	\label{sub:aufgabe_3}
+
+		\subsubsection*{a)} % (fold)
+		\label{ssub:a_}
+		
+			\begin{description}
+				\item[Behauptung:] \hfill \\
+					$a_n = \frac{1}{n}\cdot \left( (n+1)^2 -n^2 \right) \ \longrightarrow \ 2$
+				\item[Beweis:]
+			\end{description}
+			
+			Sei die Folge $(a_n)$ wie in der Behauptung gegeben. Angenommen der Grenzwert dieser Folge sei $a := 2$. Durch äquivalente Umformungen von $(a_n)$ ergibt sich:
+
+			\[
+				a_n = \frac{1}{n}\cdot \left( (n+1)^2 -n^2 \right) = \frac{1}{n}\cdot \left( n^2 + 2n + 1 -n^2 \right) = \dfrac{1}{n}\cdot ( 2n + 1) = 2 + \dfrac{1}{n}
+			\]
+
+			Sei nun ein $\varepsilon > 0$. Dann gibt es ein $n_{\varepsilon} \in \mathbb{N}$, sodass für alle $n \geq n_{\varepsilon}$ gilt:
+
+			\[
+				|a_n - a| < \varepsilon
+			\]
+
+			Es gilt:
+
+			\[
+				|a_n-a| = \left|2+\dfrac{1}{n} - 2\right| = \left| \dfrac{1}{n} \right| = \dfrac{1}{n} < \varepsilon
+			\]
+
+			Nach dem Archimedischen Axiom gibt es für alle $\varepsilon > 0$ ein $k \in \mathbb{N}$, sodass $1/k < \varepsilon$ gilt. Wird also das $n_{\varepsilon}$ so gewählt, dass dies erfüllt ist, gilt:
+
+			\[
+				\dfrac{1}{n_{\varepsilon}} < \varepsilon 
+			\]
+
+			Für jedes $n \geq n_{\varepsilon}$ folgt:
+
+			\[
+				n \geq n_{\varepsilon} \ \Rightarrow \  \dfrac{1}{n} \leq \dfrac{1}{n_{\varepsilon}}  \ \Rightarrow \ \dfrac{1}{n} < \varepsilon 
+			\]
+
+			Also gilt, dann für alle $n \geq n_{\varepsilon}$:
+
+			\[
+				|a_n-a| = \dfrac{1}{n} < \varepsilon
+			\]
+
+			Damit ist gezeigt, dass $a_n \longrightarrow 2$ gilt. $\hfill\Box$
+
+		% subsubsection a_ (end)
+
+		\subsubsection*{b)} % (fold)
+		\label{ssub:b_}
+		
+			\begin{description}
+				\item[Behauptung:] \hfill \\
+					$b_n = \frac{n}{2^n} \ \longrightarrow \ 0$
+				\item[Beweis:]
+			\end{description}
+			
+			Grundsätzlich wurde dieser Beweis bereits in der Vorlesung erbracht.\\
+			Sei $0 < q < 1$. Dann gibt es nach dem Archimedischen Axiom für alle $\varepsilon > 0$ ein $n_{\varepsilon} \in \mathbb{N}$ mit $0 < q^{n_{\varepsilon}} < \varepsilon$. Für alle $n \geq n_{\varepsilon}$ folgt dann:
+			\[
+				0 < \ q^n = \left|q^n-0\right| \ < q^{n_{\varepsilon}} < \varepsilon
+			\]
+			Dabei handelt es sich um die Beschreibung eines Grenzwertes. Es gilt $q^n \longrightarrow 0, n\longrightarrow \infty$ für ein $0 < q < 1$.\\
+
+			Für die Folge $(b_n)$ folgt dann:
+			\[
+				b_n = \frac{n}{2^n} = n\cdot \left(\dfrac{1}{2}\right)^n = n \cdot \left( \dfrac{1}{\sqrt{2}} \right)^{2n} = n \cdot \left( \dfrac{1}{\sqrt{2}} \right)^{n} \cdot \left( \dfrac{1}{\sqrt{2}} \right)^{n} > 0
+			\]
+			Es muss sich hierbei um eine positive Folge handeln, da es sich bei allen Größen um positive Größen handelt.
+			Weiterhin gilt:
+			\[
+				\sqrt{2}>1>0  \ \Rightarrow \  0 < \dfrac{1}{\sqrt{2}} < 1 \ \Rightarrow \ \left( \dfrac{1}{\sqrt{2}} \right)^{n} \longrightarrow 0
+			\]
+			Für ein $a > 0$ folgt aufgrund der Bernoulli-Ungleichung:
+			\[
+				\sqrt{2} = 1+a \ \Rightarrow \ \left( \sqrt{2} \right)^n = (1+a)^n \geq 1 + an  \ \Rightarrow \  \left(\dfrac{1}{\sqrt{2}}\right)^n \leq \dfrac{1}{1+an} < \dfrac{1}{an} 
+			\]
+
+			Damit gilt für $(b_n)$:
+			\[
+				b_n = n \cdot \left( \dfrac{1}{\sqrt{2}} \right)^{n} \cdot \left( \dfrac{1}{\sqrt{2}} \right)^{n} < n\cdot \dfrac{1}{an} \cdot \left( \dfrac{1}{\sqrt{2}} \right)^{n} = \dfrac{1}{a} \cdot \left(\dfrac{1}{\sqrt{2}}\right)^n
+			\]
+			\[
+				\Rightarrow \ \dfrac{1}{a} \cdot \left(\dfrac{1}{\sqrt{2}}\right)^n \ \longrightarrow \ \dfrac{1}{a} \cdot 0 = 0 
+			\]
+			\[
+				\Rightarrow \ 0 < b_n < \dfrac{1}{a} \cdot \left(\dfrac{1}{\sqrt{2}}\right)^n
+			\]
+
+			Nach dem Sandwich-Theorem folgt also wieder:
+			\[
+				b_n\longrightarrow 0,n\longrightarrow \infty
+			\]
+			$\hfill\Box$
+
+		% subsubsection b_ (end)
+
+		\subsubsection*{c)} % (fold)
+		\label{ssub:c_}
+		
+			\begin{description}
+				\item[Behauptung:] \hfill \\
+					$c_n = \frac{1}{n^4}\cdot \sum_{k=1}^n k^3 \longrightarrow \frac{1}{4}$
+				\item[Beweis:]
+			\end{description}
+			
+			Beweis des Hinweises durch Induktion:
+
+			\underline{Induktionsanfang für $n=1$:}\\
+			\[
+				\sum_{k=1}^n = \sum_{k=1}^1 k^3 = 1^3 = 1 = 1^2\dfrac{4}{4}= \dfrac{1}{4}1^22^2 = \dfrac{1}{4}1^2(1+1)^2 = \dfrac{1}{4}n^2(n+1)^2
+			\]
+			Damit ist die Gleichung für $n=1$ gezeigt.\\
+
+			\underline{Induktionsvoraussetzung:} $\sum_{k=1}^n k^3 = \dfrac{1}{4}n^2(n+1)^2$ \\
+
+			\underline{Induktionsbehauptung:} $\sum_{k=1}^{n+1} k^3 = \dfrac{1}{4}(n+1)^2(n+2)^2$\\
+
+			\underline{Induktionsschluss:}
+			\[
+				\sum_{k=1}^{n+1} k^3 = (n+1)^3 + \sum_{k=1}^n k^3
+			\]
+			Wegen der Induktionsbehauptung gilt:
+			\[
+				= (n+1)^3 + \dfrac{1}{4}n^2(n+1)^2
+			\]
+			Durch Ausklammern von $\frac{1}{4}(n+1)^2$ folgt:
+			\[
+				= \dfrac{1}{4}(n+1)^2 \cdot (4\cdot(n+1) + n^2) = \dfrac{1}{4}(n+1)^2 \cdot (n^2 + 4n + 4)
+			\]
+			Für den letzten Faktor lässt sich nun die bereits gezeigte erste binomische Formel verwenden:
+			\[
+				= \dfrac{1}{4}(n+1)^2(n+2)^2
+			\]
+			Damit wurde die Behauptung gezeigt. Die Formel gilt also allgemein für alle $n \in \mathbb{N}$. \\
+
+			Für die Folge $(c_n)$ folgt dann, da es sich bei allen Größen wieder um positive Zahlen handelt:
+			\[
+				c_n = \frac{1}{n^4}\cdot \sum_{k=1}^n k^3 = \dfrac{n^2(n+1)^2}{4n^4} = \dfrac{(n+1)^2}{4n^2} = \dfrac{n^2 + 2n + 1}{4n^2} = \dfrac{1}{4} + \dfrac{1}{2n} + \dfrac{1}{4n^2} > 0
+			\]
+			Die Folge $1/2n$ und die Folge $1/4n^2$ konvergieren beide gegen den Wert Null (dies wurde bereits in der Vorlesung gezeigt). Damit muss auch ihre Summe gegen Null konvergieren. Dann bedeutet dies, dass es für alle $\varepsilon > 0$ ein $n_{\varepsilon} \in \mathbb{N}$ gibt, sodass für alle $n \geq n_{\varepsilon}$ gilt:
+			\[
+				\dfrac{1}{2n} + \dfrac{1}{4n^2} < \varepsilon
+			\]
+			Es gilt dann also:
+			\[
+				\dfrac{1}{2n} + \dfrac{1}{4n^2} = c_n - \dfrac{1}{4} = \left| c_n -\dfrac{1}{4} \right| < \varepsilon
+			\]
+			Dies ist genau die Definition eines Grenzwertes für $(c_n)$. Es folgt also:
+			\[
+				c_n \longrightarrow \dfrac{1}{4}, n \longrightarrow \infty
+			\]
+			$\hfill\Box$
+
+		% subsubsection c_ (end)
+	
+		\newpage
+
+	% subsection aufgabe_3 (end)
+
+
+	\subsection*{Aufgabe 4} % (fold)
+	\label{sub:aufgabe_4}
+
+		Auch hier soll wieder der bereits bewiesene Satz der Vorlesung benutzt werden. Für alle $k \in \mathbb{R}$ und für $n \in \mathbb{N}$ gilt $k/n \rightarrow 0, n \rightarrow \infty$.
+		Durch Umformung der einzelnen Folgen in eine Zusammensetzung aus $1/n$ kann also der Grenzwert ermittelt werden. Hierbei werden die bekannten Rechenregeln benutzt, dass der Grenzwert für die Addition/Subtraktion/Multiplikation von zwei Folgen die Addition/Subtraktion/Multiplikation der beiden Grenzwerte der Folgen ist.
+
+		\subsubsection*{a)} % (fold)
+		\label{ssub:a_}
+			
+			Zuerst soll das Inverse gebildet werden. Nun ist es möglich den Nenner auszumultiplizieren. Durch Ausklammern von $1/n$ erhält man dann eine gewünschte Zusammensetzung:
+			\[
+				\dfrac{(n+1)!}{(n+2)!-n!} = \dfrac{1}{\dfrac{(n+2)!-n!}{(n+1)!}} =  \dfrac{1}{n+2 - \dfrac{1}{n+1}} = \dfrac{1}{n}\cdot \dfrac{1}{1+\dfrac{2}{n} + \dfrac{1}{n}\cdot\dfrac{1}{n+1}}
+			\]
+			\[
+				= \dfrac{1}{n}\cdot \dfrac{1}{1+\dfrac{2}{n} + \dfrac{1}{n}\cdot\dfrac{1}{n}\cdot \dfrac{1}{1+\dfrac{1}{n}}} \ \longrightarrow \ 0\cdot \dfrac{1}{1+0+0\cdot 0\cdot \dfrac{1}{1+0}} = 0\cdot 1 = 0
+			\]
+			Diese Folge besitzt also einen Grenzwert und ist damit konvergent.
+
+		% subsubsection a_ (end)
+
+		\subsubsection*{b)} % (fold)
+		\label{ssub:b_}
+		
+			\[
+				(-1)^n\cdot\dfrac{n^2}{2n^2+5} = (-1)^n\cdot \dfrac{1}{2+\dfrac{5}{n^2}}
+			\]
+			$(-1)^n$ ist nicht konvergent oder bestimmt divergent. Diese Folge wechselt ständig ihren Wert zwischen $1$ und $-1$. Damit kann die gesamte nur einen Grenzwert besitzen, wenn diese Folge durch Multiplikation mit $0$ neutralisiert wird. Die gesamte Folge müsste also gegen den Wert $0$ konvergieren, um überhaupt einen Grenzwert zu besitzen. Damit kann die genannte Folge nicht bestimmt divergent sein. Die gesamte Folge kann also nur konvergent sein, wenn der rechte Faktor gegen Null konvergiert. 
+			\[
+				\dfrac{1}{2+\dfrac{5}{n^2}} \ \longrightarrow \ \dfrac{1}{2+0} = \dfrac{1}{2} \neq 0
+			\]
+			Da dieser allerdings nicht gegen Null konvergiert, kann es für die gesamte Folge auch keinen Grenzwert geben. Die Folge ist also nicht konvergent oder bestimmt divergent.
+			
+
+		% subsubsection b_ (end)
+
+		\subsubsection*{c)} % (fold)
+		\label{ssub:c_}
+			
+			Aus dem Zähler soll $n^2$ und aus dem Nenner soll $n^3$ ausgeklammert werden. Damit folgt für die Folge:
+			\[
+				\dfrac{3n^2+n}{n^3+n-1} = \dfrac{n^2\cdot \left(3+\dfrac{1}{n}\right)}{n^3\cdot \left( 1+\dfrac{1}{n^2} -\dfrac{1}{n^3} \right)} = \dfrac{1}{n}\cdot\dfrac{3+\dfrac{1}{n}}{1+\dfrac{1}{n^2} -\dfrac{1}{n^3}} \ \longrightarrow \ 0\cdot\dfrac{3+0}{1+0-0} = 0
+			\]
+			Diese Folge ist also gegen Null konvergent.
+
+		% subsubsection c_ (end)
+		
+		\newpage
+
+	% subsection aufgabe_4 (end)
+
+	% section 1 (end)
+
+\end{document}

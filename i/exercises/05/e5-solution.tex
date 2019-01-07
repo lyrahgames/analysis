@@ -1,0 +1,358 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+
+\usepackage{geometry}
+\geometry{a4paper, lmargin=30mm, rmargin=20mm, tmargin=30mm, bmargin=20mm}
+
+\setlength{\parindent}{0mm}
+
+\begin{document}
+	\begin{center} \section*{Analysis I - Übungsserie 4} \end{center}
+
+	Übungsgruppe: Jonas Franke \\
+
+
+	Nina Held: 144753 \\
+	Clemens Anschütz: 146390 \\
+	Markus Pawellek: 144645 \\
+
+
+	\subsection*{Aufgabe 1}
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Für $A,B \subset \mathbb{R}$ seien \\
+				$A+B \ := \ \{ x\in \mathbb{R} \ | \ \text{es existieren } a \in A \text{ und } b \in B \text{ mit } x = a+b \}$\\
+				$A\cdot B \ := \ \{ x\in \mathbb{R} \ | \ \text{es existieren } a \in A \text{ und } b \in B \text{ mit } x = a\cdot b \}$. \hfill 
+		\end{description}
+
+	\subsubsection*{(a)}
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				$A,B \subset \mathbb{R}$ sind nach unten beschränkt. \hfill 
+			\item[Behauptung:] \hfill \\
+				$inf(A+B) = inf(A) + inf(B)$ gilt. \hfill
+			\item[Beweis:] 
+		\end{description}
+
+		$A$ und $B$ sollen die in der Voraussetzung beschriebenen Mengen sein. Dann sind es nach unten beschränkte Mengen. Da $\mathbb{R}$ ein angeordneter Körper ist, müssen sie deshalb beide ein Infimum besitzen.
+		Damit gilt für alle $a \in A$ und alle $b \in B$:
+
+		\[ a \geq inf(A) \]
+		\[ b \geq inf(B) \]
+
+		Aufgrund der Ordnungsvollständigkeit gilt dann die Ungleichung auch bei Addition der beiden Terme. Für alle $a \in A$ und $b \in B$ gilt:
+
+		\[ a+b \geq inf(A)+ inf(B) \]
+
+		Aufgrund der Definition von $A+B$ gilt dann für alle $x \in A+B$:
+
+		\[ x \geq inf(A) + inf(B) \]
+
+		Nach Definition muss dies eine untere Schranke von $A+B$ sein. Auch hier folgt wegen der Ordnungsvollständigkeit, dass $A+B$ ein Infimum besitzt.
+		Jede andere untere Schranke von $A$ oder $B$ ist kleiner als deren Infimum. Es folgt für eine beliebige untere Schranke $s_a \in \mathbb{R}$ von $A$ und $s_b \in \mathbb{R}$ von $B$:
+
+		\[ inf(A) \geq s_a \]
+		\[ inf(B) \geq s_b \]
+
+		Damit gilt auch hier für alle $x \in A+B$:
+
+		\[ x \geq inf(A) + inf(B) \geq s_a + s_b \]
+
+		\newpage
+
+		Die Addition der unteren Schranken von $A$ und $B$ ergibt also die unteren Schranken von $A+B$. Damit ist die untere Schranke $inf(A) + inf(B)$ die größte untere Schranke von $A+B$. Nach der Definition gilt also für das Infimum von $A+B$:
+
+		\[ inf(A+B) = inf(A) + inf(B) \]
+		$\hfill\Box$
+
+
+	\subsubsection*{(b)}
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				$A,B \subset \mathbb{R}$ sind beschränkt. $A,B \neq \varnothing$ \hfill 
+			\item[Behauptung:] \hfill \\
+				Es gibt $A,B$ mit $inf(A\cdot B) \neq inf(A) \cdot inf(B)$ \hfill
+			\item[Beweis:] 
+		\end{description}
+
+		Seien $A,B$ die in den Voraussetzungen beschriebenen Mengen mit 
+
+		\[ A := \{ 1,2 \} \]
+		\[ B := \{ -1,1 \} \]
+
+		Beide Mengen sind damit beschränkt und eine Teilmenge von $\mathbb{R}$ (damit existieren auch ihre Infima). Es gilt dann:
+
+		\[ inf(A) = 1 \]
+		\[ inf(B) = -1 \]
+
+		$A\cdot B$ ergibt sich mit dem Infimum zu:
+
+		\[ A\cdot B = \{-2,-1,1,2 \} \]
+		\[ inf(A\cdot B) = -2 \]
+
+		Es folgt:
+
+		\[ inf(A) \cdot inf(B) = 1\cdot (-1) = -1 \neq inf(A\cdot B) = -2 \]
+
+		Damit existieren mindestens diese Mengen $A,B$, für welche die Behauptung erfüllt ist. $\hfill\Box$
+
+
+	\newpage
+
+	\subsection*{Aufgabe 2}
+
+		\begin{description}
+			\item[Voraussetzung:]\hfill \\
+				Es sei die Abbildung $f:\mathbb{N}\longrightarrow \mathbb{R}$ mit $f(m+n)= f(m) + f(n) + a$ für alle $m,n \in \mathbb{N}$ und ein $a \in \mathbb{R}$. Es gilt $f(2) = 10$ und $f(20) = 118$. \hfill
+			\item[Aufgabe:]\hfill \\
+				Ist $f$ eindeutig? Wenn ja, was ist $a$ und $f$?
+			\item[Lösung:]
+		\end{description}
+
+		Seien alle Variablen und Abbildungen wie in den Voraussetzungen definiert. Dann gilt für alle $n \in \mathbb{N}$:
+
+		\[ f(n) = f((n-1)+1) \]
+
+		Aufgrund der Definition folgt nun:
+
+		\[ = f(n-1) + f(1) + a \]
+		\[ = f((n-2)+1) + f(1) + a = f(n-2) + f(1) + a + f(1) + a = f(n-2) + 2\cdot f(1) + 2\cdot a \]
+
+		Folgende Vermutung ergibt sich also:
+
+		\[ f(n) = f(1) + (n-1)\cdot f(1) + (n-1)\cdot a = n\cdot f(1) + (n-1)\cdot a \] \\
+
+
+
+		Beweis dieser Schlussfolgerung durch Induktion:\\
+
+
+
+		\underline{Induktionsanfang für $n=1$}:
+
+		\[ f(1) = 1\cdot f(1) + (1-1)\cdot a = f(1) + 0\cdot a = f(1) \]
+
+		Damit ist Behauptung für $n=1$ erfüllt.\\
+
+
+
+		\underline{Induktionsvoraussetzung:} $f(n) = n\cdot f(1) + (n-1)\cdot a$\\
+
+
+		\underline{Induktionsbehauptung:} $f(n+1) = (n+1)\cdot f(1) + n\cdot a$ \\
+
+
+		\underline{Induktionsschluss:}\\
+		Durch Anwendung der Funktionsbedingung ergibt sich:
+
+		\[ f(n+1) = f(n) + f(1) + a \]
+
+		Durch Einsetzen der Induktionsvoraussetzung folgt:
+
+		\[ = n\cdot f(1) + (n-1)\cdot a + f(1) + a = (n+1)\cdot f(1) + n\cdot a \]
+
+		Damit wäre die Induktionsbehauptung bewiesen.\\
+
+
+		Damit gilt also für alle $m,n \in \mathbb{N}$ und ein $a \in \mathbb{R}$:
+
+		\[ f(m+n)= f(m) + f(n) + a \ \Rightarrow \ f(n) = n\cdot f(1) + (n-1)\cdot a \] 
+
+		Ist nun aber $f(n) = n\cdot f(1) + (n-1)\cdot a$ für alle $n \in \mathbb{N}$ und ein $a \in \mathbb{R}$ als Bedingung für die Funktion in den Voraussetzungen gegeben, folgt für alle $m,n \in \mathbb{N}$:
+
+		\[ f(m+n) = (m+n)\cdot f(1) + (m+n-1)\cdot a \]
+		\[ = m\cdot f(1) + n\cdot f(1) + m\cdot a + (n-1)\cdot a \]
+		\[ = m\cdot f(1) + n\cdot f(1) + (m-1)\cdot a + (n-1)\cdot a + a \]
+		\[ = (m\cdot f(1) + (m-1)\cdot a) + (n\cdot f(1) + (n-1)\cdot a) + a \]
+		\[ = f(m) + f(n) + a \]
+
+		Damit folgt auch für alle $m,n \in \mathbb{N}$ und ein $a \in \mathbb{R}$:
+
+		\[ f(n) = n\cdot f(1) + (n-1)\cdot a \ \Leftrightarrow \ f(m+n) = f(m) + f(n) + a \]
+
+		Es ist also eine Äquivalenz zwischen den beiden Funktionsbedingungen vorhanden. Beweist man also die Eindeutigkeit für eine Bedingung, ist sie auch für die andere Bedingung bewiesen. Damit muss $f$ eindeutig sein, wenn $f(1)$ und $a$ eindeutig durch äquivalente Umformungen bestimmt werden können. Aus den weiteren Bedingungen folgt:
+
+		\[ f(2) = 10 = 2\cdot f(1) + a \]
+		\[ \Rightarrow \ a = 10 - 2\cdot f(1) \]
+
+		Weiterhin gilt:
+
+		\[ f(20) = 118 = 20\cdot f(1) + 19\cdot a \]
+		\[ = 20\cdot f(1) + 19\cdot (10 - 2\cdot f(1)) \]
+		\[ = (-18)\cdot f(1) + 190 \]
+
+
+		\[ \Rightarrow \ f(1) = \dfrac{118-190}{-18} = 4 \]
+		\[ \Rightarrow \ a = 10 - 2\cdot 4 = 2 \]
+
+
+		\[ \Rightarrow \ f(n) = 4n + 2\cdot (n-1) = 6n - 2 \]
+
+		Damit konnten durch äquivalente Umformungen $f(1)$ und $a$ eindeutig bestimmt werden. Es muss also auch $f$ durch die Bedingungen eindeutig sein.
+
+
+	\newpage
+
+	\subsection*{Aufgabe 3}
+
+
+		\begin{description}
+			\item[Behauptung:]\hfill \\
+				Für alle $n \in \mathbb{N}$ und alle $x_i \in \mathbb{R}$ mit $x_i > 0$ für $i \in \mathbb{N}$ und $1\leq i \leq n$ gilt: \\
+				$\prod_{i=1}^n x_i = 1 \ \Longrightarrow \ \sum_{i=1}^n x_i \geq n$ \hfill
+			\item[Beweis:]
+		\end{description}
+
+		Beweis soll durch Induktion geführt werden. Dabei seien alle Variablen wie in der Behauptung definiert.\\
+
+		\underline{Induktionsanfang für $n=1$:}
+
+			\[ x_1 = 1 \Rightarrow x_1 \geq 1 \]
+
+			Damit muss also die Gleichung für $n=1$ erfüllt sein.\\
+
+		\underline{Induktionsvoraussetzung:} $\prod_{i=1}^n x_i = 1 \ \Longrightarrow \ \sum_{i=1}^n x_i \geq n$\\
+
+
+		\underline{Induktionsbehauptung:} $\prod_{i=1}^{n+1} x_i = 1 \ \Longrightarrow \ \sum_{i=1}^{n+1} x_i \geq n+1$ \\
+
+
+		\underline{Induktionsschluss:}
+
+		\[ 1 = \prod_{i=1}^{n+1} x_i = x_nx_{n+1}\cdot \prod_{i=1}^{n-1} x_i \]
+
+		Definiert man jetzt für alle $i \in \mathbb{N}$ mit $1 \leq i \leq n-1$
+
+		\[ y_i := x_i \]
+
+		und für $n$
+
+		\[ y_n := x_nx_{n+1} \]
+
+		folgt:
+
+		\[ x_nx_{n+1}\cdot \prod_{i=1}^{n-1} x_i = y_n \cdot \prod_{i=1}^{n-1} y_i = \prod_{i=1}^{n} y_i = 1 \]
+
+		Dieses Produkt muss immer noch $1$ sein, da nur eine Größe durch eine andere ersetzt wurde. Für diese Gleichung folgt also aus der Induktionsvoraussetzung:
+
+		\[ \Rightarrow \ \sum_{i=1}^n y_i \geq n \]
+		\[ \Rightarrow \ x_nx_{n+1} + \sum_{i=1}^{n-1} x_i \geq n \]
+
+		Durch Addition mit $1$ folgt:
+
+		\[ \Rightarrow \ x_nx_{n+1} + 1 + \sum_{i=1}^{n-1} x_i \geq n+1 \]
+
+		Es kann hier nun ohne Einschränkung angenommen werden, dass $x_{n+1} \geq 1$ und $x_n \leq 1$ ist. Dies folgt aus der Betrachtung, dass die Multiplikation aller $x_i$ gleich $1$ ergeben muss.
+		Sind also Zahlen in diesem Produkt, welche größer $1$ sind, muss es auch mindestens eine Zahl geben, welche kleiner $1$ ist. Denn sonst würde es nicht möglich sein durch Multiplikation von Zahlen, welche alle größer $1$ sind, $1$ als Ergebnis zu erhalten. Der Spezialfall würde sich ergeben, wenn jeder Faktor in diesem Produkt $1$ wäre. Man findet also in diesem Produkt immer mindestens eine Zahl, welche größer gleich $1$ ist und eine andere, welche kleiner gleich $1$ ist. Da es sich bei den reellen Zahlen um einen angeordneten Körper handelt, können nun alle Faktoren beliebig vertauscht werden, ohne den Wahrheitswert der Gleichung zu ändern. Damit können auch $x_n$ und $x_{n+1}$ einen beliebigen Faktor dieses Produktes darstellen. \\
+
+
+		Nun gilt für ein $\epsilon \in \mathbb{R}$ mit $\epsilon \geq 0$:
+
+		\[ x_{n+1} \geq 1 \ \Rightarrow \ x_{n+1} = 1 + \epsilon \]
+
+		Für ein $\epsilon' \in \mathbb{R}$ mit $0 \leq \epsilon' < 1$:
+
+		\[ x_n \leq 1 \ \Rightarrow \ x_n = 1-\epsilon' \]
+
+		Damit folgt 
+
+		\[ x_nx_{n+1} + 1 = (1-\epsilon')\cdot(1+\epsilon) +1 = 1 + \epsilon -\epsilon' - \epsilon\epsilon' + 1 = 2 + \epsilon -\epsilon' - \epsilon\epsilon' \]
+
+		Dabei ist zu beachten, da $\epsilon,\epsilon' \geq 0$, dass $\epsilon\epsilon' \geq 0$ gilt. Weiterhin gilt:
+
+		\[ x_n + x_{n+1} = (1-\epsilon') + (1+ \epsilon) = 2 + \epsilon -\epsilon' \]
+
+
+		\[ \Rightarrow \ 2 + \epsilon -\epsilon' \geq 2 + \epsilon -\epsilon' - \epsilon\epsilon' \]
+		\[ \Rightarrow \ x_n + x_{n+1} \geq x_nx_{n+1} + 1 \]
+
+		Aus den bereits umgestellten Ungleichungen folgt:
+
+		\[ \Rightarrow \ x_n + x_{n+1} + \sum_{i=1}^{n-1} x_i \geq x_nx_{n+1} + 1 + \sum_{i=1}^{n-1} x_i \geq n+1 \]
+
+		Durch Auslassen der mittleren Ungleichung folgt:
+
+		\[ \Rightarrow \ \sum_{i=1}^{n+1} x_i \geq n+1 \]
+
+		Damit folgt:
+
+		\[ \prod_{i=1}^{n+1} x_i = 1 \ \Longrightarrow \ \sum_{i=1}^{n+1} x_i \geq n+1 \]
+
+		Es wurde die Induktionsbehauptung gezeigt. Also muss auch die Behauptung gezeigt sein. $\hfill\Box$
+
+
+
+	\newpage
+
+	\subsection*{Aufgabe 4}
+
+		\begin{description}
+			\item[Behauptung:]\hfill \\
+				Für alle $n \in \mathbb{N}$ und alle $a_i \in \mathbb{R}$ mit $a_i > 0$ für $i \in \mathbb{N}$ und $1\leq i \leq n$ gilt: \\
+				\[ \dfrac{n}{\sum_{i=1}^n \dfrac{1}{a_i}} \ \leq \ \sqrt[n]{\prod_{i=1}^n a_i} \ \leq \ \dfrac{\sum_{i=1}^n a_i}{n} \] \hfill 
+			\item[Beweis:]
+		\end{description} 
+
+		Seien die Variablen wie in den Voraussetzungen gegeben. Dann soll $p \in \mathbb{R}$ definiert sein als:
+
+		\[ p := \sqrt[n]{a_1\cdot ... \cdot a_n} \geq 0 \]
+
+		$p$ muss größer Null sein, da alle $a_i$ größer Null sind und durch Multiplikation zweier positiver Zahlen wieder eine positive Zahl herauskommt. 
+		Seien $u_i$ für $i \in \mathbb{N}$ und $1\leq i \leq n$ definiert als:
+
+		\[ u_i := \dfrac{p}{a_i} \]
+
+		Damit gilt: 
+
+		\[ \Rightarrow \ \prod_{i=1}^n u_i = \prod_{i=1}^n \dfrac{p}{a_i} = p^n \cdot \prod_{i=1}^n \dfrac{1}{a_i} = \dfrac{a_1\cdot ... \cdot a_n}{a_1\cdot ... \cdot a_n} = 1 \]
+
+		Es muss also das Produkt aller $u_i$ gleich $1$ sein. Aus Aufgabe 3 folgt dann durch den bewiesenen Satz, dass Folgendes gilt:
+
+		\[ \Rightarrow \ \sum_{i=1}^n u_i \geq n \]
+
+		Durch Einsetzen ergibt sich:
+
+		\[ \Rightarrow \ \sum_{i=1}^n \dfrac{p}{a_i} = p \cdot \sum_{i=1}^n \dfrac{1}{a_i} \geq n \]
+
+		Jedes $a_i$ kommt als Inverses vor. Da jedoch alle $a_i > 0$ sind, müssen auch ihre Inversen größer Null sein. Damit gilt diese Ungleichung auch nach der Multiplikation mit der Summe der Inversen:
+
+		\[ \Rightarrow \ p \geq \dfrac{n}{\sum_{i=1}^n \dfrac{1}{a_i}} \]
+
+		Durch Einsetzen von $p$ folgt:
+
+		\[ \Rightarrow \ \sqrt[n]{a_1\cdot ... \cdot a_n} = \sqrt[n]{\prod_{i=1}^n a_i} \geq \dfrac{n}{\sum_{i=1}^n \dfrac{1}{a_i}} \]
+
+		Damit wäre die linke Seite der Ungleichung bewiesen. Für die rechte Seite der Ungleichung sollen $v_i$ für $i \in \mathbb{N}$ und $1\leq i \leq n$ definiert werden mit:
+
+		\[ v_i := \dfrac{a_i}{p} \]
+
+		Es gilt dann (ähnliche Betrachtungsweise wie oben):
+
+		\[ \Rightarrow \ \prod_{i=1}^n v_i = \prod_{i=1}^n \dfrac{a_i}{p} = \dfrac{1}{p^n} \cdot \prod_{i=1}^n a_i = \dfrac{a_1\cdot ... \cdot a_n}{a_1\cdot ... \cdot a_n} = 1 \]
+
+		Es ist also auch das Produkt der $v_i$ gleich $1$. Aus Aufgabe 3 folgt wieder durch den bewiesenen Satz:
+
+		\[ \Rightarrow \ \sum_{i=1}^n v_i \geq n \]
+		\[ \Rightarrow \ \sum_{i=1}^n \dfrac{a_i}{p} = \dfrac{1}{p} \cdot \sum_{i=1}^n a_i \geq n \]
+
+		Es wurde bereits oben gezeigt, dass $p>0$. Außerdem gilt auch $n>0$, da es bereits so definiert worden ist. Es folgt also, dass auch $1/n > 0$ sein muss. Die Ungleichung gilt also auch nach der Multiplikation mit $p$ und $1/n$.
+
+		\[ \Rightarrow \ \sum_{i=1}^n a_i \geq n\cdot p \]
+		\[ \Rightarrow \ \dfrac{1}{n} \cdot \sum_{i=1}^n a_i \geq p \]
+
+		Durch Einsetzen von $p$ folgt:
+
+		\[ \Rightarrow \ \dfrac{1}{n} \cdot \sum_{i=1}^n a_i \geq \sqrt[n]{\prod_{i=1}^n a_i} = \sqrt[n]{a_1\cdot ... \cdot a_n} \]
+
+		Damit wurde die rechte Seite der Ungleichung gezeigt und die Behauptung bewiesen. $\hfill\Box$
+
+
+\end{document}

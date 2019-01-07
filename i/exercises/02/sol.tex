@@ -1,0 +1,352 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{geometry}
+\geometry{a4paper, lmargin=30mm, rmargin=20mm, tmargin=30mm, bmargin=20mm}
+
+\setlength{\parindent}{0mm}
+
+\usepackage{lastpage}
+
+
+\begin{document}
+
+	\begin{center}\section*{Analysis I - Übungsserie 2}\end{center}
+
+	Übungsgruppe: Jonas Franke \\
+
+
+	Nina Held: 144753 \\
+	Clemens Anschütz: 146390 \\
+	Markus Pawellek: 144645 \\
+
+
+	\subsection*{Aufgabe 1}
+
+	\subsubsection*{(a)}
+
+		Für die Menge $N$ soll gelten:
+
+		\[ N = \{ e \} \]
+		\[ s:N \longrightarrow N \text{  mit  } n(e) = e \]
+
+		Die Abbildung $s$ ist aufgrund der Definition für nur ein Element injektiv. Für eine Teilmenge $M$ dieser Menge $N$ gilt also automatisch:
+
+		\[ (e \in M) \Rightarrow (s(e) \in M) \Rightarrow (M = N) \] $\hfill \Box$
+
+		
+	\subsubsection*{(b)}
+
+		Eine weitere endliche Menge $N$ kann beschrieben werden durch:
+
+		\[ N = \{1,2\} \]
+		\[ s:N \longrightarrow N \text{  mit  } 1:=e \]
+		\[ s(1) = 2 \text{  und  } s(2) = 1 \]
+
+		Die Abbildung $s$ ist injektiv, da $s(1) \neq s(2)$. Für eine Teilmenge $M$ von $N$ gilt:
+
+		\[ \left( (n \in M) \Rightarrow (s(n) \in M) \right) \wedge (1 \in M) \Rightarrow (s(1) \in M) \Rightarrow (s(2) \in M) \Rightarrow (M=N) \] $\hfill \Box$
+
+
+	\subsection*{Aufgabe 2}
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				$(N,e,\nu)$ genüge den Peano Axiomen. Für $n \in N$ soll $A_e = \{e\}$ und $A_{\nu(n)} = A_n \cup \{\nu(n)\}$.
+		\end{description}
+
+	\subsubsection*{(a)}
+	
+		\begin{description}
+			\item[Behauptung:] Ordnungsrelation: \hfill \\
+				transitiv: $(x \leq y)\wedge(y \leq z) \Rightarrow (x \leq z)$ \hfill \\
+				antisymmetrisch: $(x \leq y)\wedge(y \leq x) \Rightarrow (x = y)$ \hfill
+			\item[Beweis:]
+		\end{description}
+
+		\[ (x \leq y) \Leftrightarrow (A_x \subseteq A_y) \]
+		\[ (y \leq z) \Leftrightarrow (A_y \subseteq A_z) \]
+
+		Stellt eine Menge $Y$ eine Teilmenge zu einer anderen Menge $Z$ dar, dann muss eine weitere Teilmenge von $Y$ zwangsläufig auch eine Teilmenge von $Z$ sein, da alle Elemente in $Y$ bereits zu $Z$ gehören.
+
+		\[ (A_x \subseteq A_y)\wedge(A_y \subseteq A_z) \Rightarrow (A_x \subseteq A_z) \Leftrightarrow (x \leq z) \]
+
+		Damit ist die definierte Relation transitiv. Weiterhin gilt:
+
+		\[ (x \leq y)\wedge(y \leq x) \Leftrightarrow (A_x \subseteq A_y)\wedge(A_y \subseteq A_x) \]
+
+		Sind zwei Mengen Teilmengen voneinander, dann muss jedes Element der einen Menge auch in der anderen vorkommen und umgekehrt. Damit müssen diese beiden Mengen also gleich sein.
+
+		\[ (A_x \subseteq A_y)\wedge(A_y \subseteq A_x) \Rightarrow (A_x = A_y) \]
+
+		Die Menge $A_n$ für ein $n \in N$ ist eindeutig. Aufgrund der Bijektivität der Nachfolgerfunktion $\nu$ gilt für $n_1,n_2 \in N$ mit $n_1 \neq n_2$ zwangsläufig $A_{n_1} \neq A_{n_2}$.
+		Daraus folgt:
+
+		\[ (A_x = A_y) \Rightarrow (x = y) \]
+
+		Damit ist die Relation antisymmetrisch und reflexiv. Es handelt sich um eine Ordnungsrelation. $\hfill \Box$
+
+
+	\subsubsection*{(b)}
+
+		\begin{description}
+			\item[Behauptung:] $A_x = \{n \in N \ | \ n \leq x \}$
+			\item[Beweis:]
+		\end{description}
+
+		Aufgrund der eben genannten Definition gilt auch:
+
+		\[ \{n \in N \ | \ n \leq x \} = \{n \in N \ | \ A_n \subseteq A_x \} \]
+		\[ L:= \{n \in N \ | \ \text{für $A_n$ gilt die Behauptung} \} \]
+
+		Dann befindet sich das Element $e$ in $L$:
+
+		\[ (A_e = \{e\}) \Rightarrow (A_e \subseteq A_e) \Rightarrow (e \in L) \]
+
+		Gilt nun für ein $n \in N$ auch $n \in L$, müssen also alle Elemente in $A_n$ kleiner oder gleich $n$ sein. Es gilt:
+
+		\[ (A_{\nu(n)} = A_n \cup \{\nu(n)\}) \Rightarrow (A_n \subseteq A_{\nu(n)}) \Rightarrow (n \leq \nu(n)) \]
+
+		Damit gilt für alle $k \in A_n$:
+
+		\[ (k \leq n)\wedge(n \leq \nu(n)) \Rightarrow (k \leq \nu(n)) \]
+
+		Außerdem gilt $\nu(n) \leq \nu(n)$. Damit ist für alle Elemente in $A_{\nu(n)}$ gezeigt, dass sie kleiner oder gleich $\nu(n)$ sind. Damit gilt:
+
+		\[(n \in L) \Rightarrow (\nu(n) \in L) \]
+		\[ \Rightarrow (L = N) \] 
+
+		Aufgrund der Induktion über ganz $N$ muss also die Behauptung für alle Elemente aus $N$ gelten. $\hfill \Box$
+
+
+	\subsubsection*{(c)}
+
+
+		\begin{description}
+			\item[Behauptung:] totale Ordnung: \hfill \\
+				Für alle $x,y \in N$ muss gelten: $(x \leq y) \vee (y \leq x)$.
+			\item[Beweis:]
+		\end{description}
+
+		Diese Schreibweise ist äquivalent zu:
+
+		\[ (A_x \subseteq A_y) \vee (A_y \subseteq A_x) \]
+
+		Zuvor wurde gezeigt, dass für die Menge $A_n$ mit $n \in N$ für jedes Element $k \in A_n$ auch $k \leq n$ gilt.
+		Die zweite Möglichkeit wäre, dass es ein $k \in N$ gibt, welches kein Element von $A_n$ ist. Dann gilt:
+
+		\[ k \in N\setminus A_n = M_n \]
+
+		Wobei für $M_n$ gilt:
+
+		\[ \nu(n) \in M_n \]
+		\[ (i \in M_n) \Rightarrow (\nu(i) \in M_n) \]
+
+		Damit folgt für $M_k$ und $M_n$:
+
+		\[ \nu(k) \in M_k \]
+		\[ (k \in M_n) \Rightarrow (\nu(k) \in M_n) \]
+
+		Aufgrund der Eindeutigkeit der Mengen $M_k$ und $M_n$ gilt:
+
+		\[ \Rightarrow (M_k \subseteq M_n) \Rightarrow (N\setminus A_k \subseteq N\setminus A_n) \Rightarrow (A_n \subseteq A_k) \]
+		\[ \Rightarrow \neg(k \in A_n) \Rightarrow (A_n \subseteq A_k) \Rightarrow (n \leq k) \]
+
+		Das bedeutet, dass für beliebige $k,n \in N$ entweder $k \leq n$ oder $n \leq k$ gelten muss. Damit gilt die Behauptung für alle natürlichen Zahlen. $\hfill \Box$ 
+		
+
+	\subsection*{Aufgabe 3}
+
+	\subsubsection*{(a)}
+
+		\begin{description}
+			\item[Behauptung:] $\sum_{k=1}^n k(k+1) = \dfrac{1}{3} n(n+1)(n+2)$
+			\item[Beweis:]
+		\end{description}
+
+		Induktionsanfang: 
+
+		$n=1$
+
+		\[ \sum_{k=1}^1 k(k+1) = 1\cdot(1+1) = 2 \]
+		\[ \dfrac{1}{3} n(n+1)(n+2) = \dfrac{1}{3} \cdot 1\cdot (1+1) \cdot (1+2) = 2 \]
+
+		Behauptung ist also für $n=1$ erfüllt. \\
+
+
+		Induktionsvoraussetzung:
+
+		$\sum_{k=1}^n k(k+1) = \dfrac{1}{3} n(n+1)(n+2)$ \\
+
+
+		Induktionsbehauptung:
+
+		$\sum_{k=1}^{n+1} k(k+1) = \dfrac{1}{3} (n+1)(n+2)(n+3)$ \\
+
+
+		Induktionsschluss:
+
+		\[ \sum_{k=1}^{n+1} k(k+1) = (n+1)(n+2) + \sum_{k=1}^n k(k+1) \]
+		Summe durch Induktionsvoraussetzung ersetzen:
+		\[ = (n+1)(n+2) + \dfrac{1}{3} n(n+1)(n+2) \]
+		\[ = (n+1)(n+2) \cdot \left( \dfrac{n}{3} + 1 \right)\] 
+		\[ = \dfrac{1}{3} (n+1)(n+2)(n+3) \] $\hfill \Box$
+
+
+	\subsubsection*{(b)}
+
+		\begin{description}
+			\item[Behauptung:] $\sum_{k=1}^n k(k+1)(k+2) = \dfrac{1}{4} n(n+1)(n+2)(n+3)$
+			\item[Beweis:]
+		\end{description}
+
+		Induktionsanfang: 
+
+		$n=1$
+
+		\[ \sum_{k=1}^1 k(k+1)(k+2) = 1\cdot(1+1)\cdot(1+2) = 6 \]
+		\[ \dfrac{1}{4} n(n+1)(n+2)(n+3) = \dfrac{1}{4} \cdot 1\cdot (1+1) \cdot (1+2)\cdot(1+3) = 6 \]
+
+		Behauptung ist also für $n=1$ erfüllt. \\
+
+
+		Induktionsvoraussetzung:
+
+		$\sum_{k=1}^n k(k+1)(k+2) = \dfrac{1}{4} n(n+1)(n+2)(n+3)$ \\
+
+
+		Induktionsbehauptung:
+
+		$\sum_{k=1}^{n+1} k(k+1)(k+2) = \dfrac{1}{4} (n+1)(n+2)(n+3)(n+4)$ \\
+
+
+		Induktionsschluss:
+
+		\[ \sum_{k=1}^{n+1} k(k+1)(k+2) = (n+1)(n+2)(n+3) + \sum_{k=1}^n k(k+1)(k+2) \]
+		Summe durch Induktionsvoraussetzung ersetzen:
+		\[ = (n+1)(n+2)(n+3) + \dfrac{1}{4} n(n+1)(n+2)(n+3)\]
+		\[ = (n+1)(n+2)(n+3) \cdot \left( \dfrac{n}{4} + 1 \right)\] 
+		\[= \dfrac{1}{4} (n+1)(n+2)(n+3)(n+4) \] $\hfill \Box$
+
+
+	\subsubsection*{(c)}
+
+		\begin{description}
+			\item[Behauptung/Vermutung:] $\sum_{k=1}^n \prod_{i=0}^{m-1}(k+i) = \dfrac{1}{m+1} \prod_{j=0}^m (n+j)$
+			\item[Beweis:]
+		\end{description}
+
+		Induktionsanfang: 
+
+		$n=1$
+
+		\[ \sum_{k=1}^1 \prod_{i=0}^{m-1}(k+i) = \prod_{i=0}^{m-1}(1+i) \]
+		\[ \dfrac{1}{m+1} \prod_{j=0}^m (n+j) = \dfrac{1}{m+1} \prod_{j=0}^m (1+j) = \prod_{j=0}^{m-1} (1+j) \]
+
+		Es handelt sich um die gleichen Summen mit unterschiedlich benannten Laufvariablen. Behauptung ist also für $n=1$ erfüllt. \\
+
+
+		Induktionsvoraussetzung:
+
+		$\sum_{k=1}^n \prod_{i=0}^{m-1}(k+i) = \dfrac{1}{m+1} \prod_{j=0}^m (n+j)$ \\
+
+
+		Induktionsbehauptung:
+
+		$\sum_{k=1}^{n+1} \prod_{i=0}^{m-1}(k+i) = \dfrac{1}{m+1} \prod_{j=0}^m (n+1+j)$ \\
+
+
+		Induktionsschluss:
+
+		\[ \sum_{k=1}^{n+1} \prod_{i=0}^{m-1}(k+i) = \prod_{i=0}^{m-1}(n+1+i) + \sum_{k=1}^{n} \prod_{i=0}^{m-1}(k+i) \]
+		Summe durch Induktionsvoraussetzung ersetzen:
+		\[ = \prod_{i=0}^{m-1}(n+1+i) + \dfrac{1}{m+1} \prod_{j=0}^m (n+j)\]
+		Anpassung der Laufvariablen:
+		\[ = \prod_{i=1}^{m}(n+i) + \dfrac{1}{m+1} \prod_{i=0}^m (n+i) \]
+		\[ = \left(\prod_{i=1}^{m}(n+i) \right) \cdot \left( 1 + \dfrac{n}{m+1} \right) \] 
+		\[ = \dfrac{1}{m+1} \left( \prod_{i=1}^m(n+i) \right) \cdot (n+m+1) \]
+		\[ = \dfrac{1}{m+1} \prod_{i=1}^{m+1} (n+i) \]
+		Anpassung der Laufvariablen: 
+		\[ = \dfrac{1}{m+1} \prod_{i=0}^{m} (n+1+i) \]$\hfill \Box$
+
+
+
+	\subsection*{Aufgabe 4}
+
+
+		\begin{description}
+			\item[Behauptung:] $11^{n+1} + 12^{2n-1} = 133m$ für $m \in \mathbb{N}$
+			\item[Beweis:]
+		\end{description}
+
+		Induktionsanfang:
+
+		$n=1$
+
+		\[ 11^{1+1} + 12^{2\cdot1-1} = 11^2 +12=133=133 \cdot 1 = 133m \]
+
+		Für $n=1$ ist diese Gleichung mit $m=1$ erfüllt. \\ 
+
+
+		Induktionsvoraussetzung:
+
+		$11^{n+1} + 12^{2n-1} = 133m_1$ \\
+
+
+		Induktionsbehauptung:
+
+		$11^{n+2} + 12^{2n+1} = 133m_2$ \\
+
+
+		Induktionsschluss:
+
+		\[ 11^{n+2} + 12^{2n+1} = 11\cdot11^{n+1} + 12^2 \cdot 12^{2n-1} \]
+		\[ = 11\cdot11^{n+1} + 144 \cdot 12^{2n-1} = 11\cdot11^{n+1} + (133 + 11) \cdot 12^{2n-1} \]
+		\[ = 11\cdot(11^{n+1} + 12^{2n-1}) + 133\cdot 12^{2n-1} \]
+
+		Der linke Summand ist aufgrund der Induktionsvoraussetzung ein ganzzahliges Vielfaches von $133$ und damit auch durch diese teilbar. Der rechte Summand wird mit $133$ multipliziert und muss deshalb ein ganzzahliges Vielfaches der selben sein. Da beide Summanden durch $133$ teilbar sind, muss auch die gesamte Zahl durch $133$ teilbar sein. $\hfill \Box$
+
+
+
+	\subsection*{Aufgabe Z1}
+
+		$ M\alpha\xi \text{ } \gamma\iota\beta\tau \text{ } \Phi\iota\pi\sigma \text{ } \alpha\upsilon\sigma \text{ } \Phi\lambda\alpha\chi\sigma \text{ } \epsilon\iota\nu\epsilon\nu$
+		$ \text{ } K\lambda\alpha\pi\pi\sigma \text{.}$
+
+
+
+
+	\subsection*{Aufgabe Z2}
+
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				$(N,e,\nu)$ genügt den Peano Axiomen. Für $n \in N$ soll $A_e = \{e\}$ und $A_{\nu(n)} = A_n \cup \{\nu(n)\}$. Die Abbildung $f:A_n \longrightarrow A_n$.
+			\item[Behauptung:] \hfill \\
+				($f$ ist injektiv) $\Leftrightarrow$ ($f$ ist surjektiv)
+			\item[Beweis:]
+		\end{description}
+
+		($f$ ist injektiv) $\Rightarrow$ ($f$ ist surjektiv):
+
+
+		Für $x_1,x_2 \in A_n$ mit $x_1 \neq x_2$ gilt dann:
+		
+		\[ f(x_1) \neq f(x_2) \]
+
+		Da die Menge $A_n$ eine endliche Menge mit $n$ Elementen ist, muss also für jedes dieser unterschiedlichen Elemente ein eigenes Abbildungselement auf der gleichen Menge gefunden werden, ohne den gleichen Wert zweimal zu erreichen. Damit muss es also $n$ verschiedene Werte für die Abbildung $f$ auf $A_n$ geben. Da $A_n$ genau $n$ Elemente besitzt, wird also auch der gesamte Wertebereich getroffen. Daraus folgt, dass diese Funktion auch surjektiv sein muss.\\
+
+
+
+		($f$ ist surjektiv) $\Rightarrow$ ($f$ ist injektiv):
+
+		Durch die Surjektivität von $f$ muss also jedes Element des Wertebereichs erreicht werden. Dies sind im Falle von $A_n$ als Wertebereich genau $n$ Elemente. Da ein Argument nur auf einen einzigen Wert abgebildet werden kann, müssen mindestens $n$ verschiedene Elemente auch $n$ verschiedene Funktionswerte haben. Da aber $A_n$ auch der Definitionsbereich ist, kann es nicht mehr als $n$ Argumente geben. Daraus folgt, dass jedes Element auf genau ein anderes Element abgebildet wird. Damit muss $f$ injektiv sein.
+
+		\[ \Rightarrow ((f \text{ ist injektiv}) \Leftrightarrow (f \text{ ist surjektiv})) \] $\hfill \Box$
+
+
+\end{document}

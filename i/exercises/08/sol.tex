@@ -1,0 +1,200 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+
+\usepackage{geometry}
+\geometry{a4paper, lmargin=30mm, rmargin=30mm, tmargin=30mm, bmargin=30mm}
+\setlength{\parindent}{0mm}
+
+\usepackage[automark]{scrpage2}
+\usepackage{lastpage}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ihead[]{Analysis I - Übungsserie 8 \\ Übungsgruppe: Jonas Franke}
+\ohead[]{Nina Held - 144753\\ Clemens Anschütz - 146390\\ Markus Pawellek - 144645}
+\cfoot[]{\pagemark/\pageref{LastPage}}
+\setheadsepline[\textwidth]{0.5pt}
+
+\begin{document}
+
+	\begin{center}
+		\section*{Analyis I - Übungsserie 8} % (fold)
+		\label{sec:analyis_i_bungsserie_8}
+		
+		% section analyis_i_übungsserie_8 (end)
+	\end{center}
+
+	\subsection*{Aufgabe 1} % (fold)
+	\label{sub:aufgabe_1}
+	
+		\subsubsection*{a)} % (fold)
+		\label{ssub:a_}
+		
+			\begin{description}
+				\item[Voraussetzung:] \hfill \\
+					Sei $(x_n)$ eine Folge in $\mathbb{R}$.
+				\item[Behauptung:] \hfill \\
+					Konvergiert $(x_n)$, so konvergiert auch jede Teilfolge.
+				\item[Beweis:]
+			\end{description}
+			
+			Sei $(x_n)$ eine Folge in $\mathbb{R}$. Sei $x \in \mathbb{R}$ der Grenzwert von $(x_n)_{n\in \mathbb{N}}$. Dann gibt es für alle $\varepsilon > 0$ ein $n_{\varepsilon}\in \mathbb{N}$, sodass für alle $n\geq n_{\varepsilon}$ gilt:
+			\[
+				|x_n-x| < \varepsilon
+			\]
+			Für eine beliebige Teilfolge $(x_{n_k})_{k\in \mathbb{N}}$ gilt	für alle $k,k^\prime \in \mathbb{N}$ mit $k^\prime > k$:
+			\[
+				n_{k^\prime} > n_k
+			\]
+			Es gibt damit also ein $k \in \mathbb{N}$, sodass $n_k \geq n_\varepsilon$. Damit muss für alle $k^\prime \geq k$ gelten:
+			\[
+				n_{k^\prime} \geq n_k \geq n_\varepsilon \ \Rightarrow \ |x_{n_{k^\prime}}-x| < \varepsilon
+			\]
+			Dies ist gerade die Definition der Konvergenz einer Teilfolge. Die Teilfolge muss also auch gegen den gleichen Grenzwert konvergieren. $\hfill\Box$
+
+		% subsubsection a_ (end)
+
+		\subsubsection*{b)} % (fold)
+		\label{ssub:b_}
+		
+			\begin{description}
+				\item[Voraussetzung:] \hfill \\
+					Sei $(x_n)_{n\in \mathbb{N}}$ eine Folge in $\mathbb{R}$. $(x_{2n})_{n\in \mathbb{N}},(x_{2n+1})_{n\in \mathbb{N}}$ und $(x_{3n})_{n\in \mathbb{N}}$ konvergieren. 
+				\item[Behauptung:] \hfill \\
+					$(x_n)_{n\in \mathbb{N}}$ konvergiert.
+				\item[Beweis:]
+			\end{description}
+			
+			Seien die Folgen, wie in der Voraussetzung gegeben. Sei $a\in \mathbb{R}$ der Grenzwert von $(x_{2n})_{n\in \mathbb{N}}$, $b\in \mathbb{R}$ der Grenzwert von $(x_{2n+1})_{n\in \mathbb{N}}$ und $c \in \mathbb{R}$ der Grenzwert von $(x_{3n})_{n\in \mathbb{N}}$. Dann stellt die Teilfolge $(x_{6k})_{k\in \mathbb{N}}$ sowohl eine Teilfolge von $(x_{3n})_{n\in \mathbb{N}}$ (für $n=2k$ mit $k \in \mathbb{N}$), als auch eine Teilfolge von $(x_{2n})_{n\in \mathbb{N}}$ (für $n=3k$ mit $k \in \mathbb{N}$) dar. Aufgrund des vorher bewiesenen Satzes muss die Teilfolge dieser beiden Teilfolgen gegen den selben Grenzwert konvergieren. Es gilt also für $n \in \mathbb{N}$:
+			\begin{align*}
+				x_{2n} \longrightarrow a,\ n\longrightarrow \infty \ &\Rightarrow \  x_{6n} \longrightarrow a, \ n\longrightarrow \infty \\
+				x_{3n} \longrightarrow c,\ n\longrightarrow \infty \ &\Rightarrow \  x_{6n} \longrightarrow c, \ n\longrightarrow \infty 
+			\end{align*}
+			\[
+				\Rightarrow \ a = c
+			\]
+			Um die Konvergenz zu ermöglichen, müssen diese Grenzwert also gleich sein. Weiterhin stellt die Folge $(x_{6k-3})_{k\in \mathbb{N}}$ auch eine Teilfolge von $(x_{3n})_{n\in \mathbb{N}}$ (für $n=2k-1$ mit $k \in \mathbb{N}$) und $(x_{2n+1})_{n\in \mathbb{N}}$ (für $n = 3k-2$ mit $k\in \mathbb{N}$) dar. Es folgt hier nach dem gleichen Prinzip für $n \in \mathbb{N}$:
+			\begin{align*}
+				x_{2n+1} \longrightarrow b,\ n\longrightarrow \infty \ &\Rightarrow \  x_{6n-3} \longrightarrow b, \ n\longrightarrow \infty \\
+				x_{3n} \longrightarrow c,\ n\longrightarrow \infty \ &\Rightarrow \  x_{6n-3} \longrightarrow c, \ n\longrightarrow \infty 
+			\end{align*}
+			\[
+				\Rightarrow \ b = c \ \Rightarrow \ a = b
+			\]
+			Damit müssen die Grenzwerte aller drei Teilfolgen die gleichen sein. Für jedes $n \in \mathbb{N}$ mit $n>1$ ist nun $x_n$ ein Wert der Teilfolge $(x_{2n})$ (für gerade $n$) oder ein Wert der Teilfolge $(x_{2n+1})$ (für ungerade $n$). Da nun beide Folgen gegen den gleichen Grenzwert konvergieren, muss nun auch von $(x_n)$ gegen diesen Wert konvergieren. $\hfill\Box$
+			
+
+		% subsubsection b_ (end)
+
+	% subsection aufgabe_1 (end)
+
+	\newpage
+
+	\subsection*{Aufgabe 2} % (fold)
+	\label{sub:aufgabe_2}
+	
+		\subsubsection*{a)} % (fold)
+		\label{ssub:a_}
+		
+			\begin{align*}
+				n^{\frac{5}{2}}\cdot\left(\dfrac{n^{\frac{1}{2}}}{n^2+1} - \dfrac{n^{-\frac{1}{2}}}{n+1}\right) &=& \dfrac{n^3}{n^2+1} - \dfrac{n^2}{n+1} &=& \dfrac{n^3(n+1) - n^2(n^2+1)}{(n^2+1)(n+1)} &=& \dfrac{n^4 + n^3 - n^4 -n^2}{n^3+n^2+n+1}\\
+				&=& \dfrac{n^3-n^2}{n^3+n^2+n+1} &=& \dfrac{n^3}{n^3}\cdot \dfrac{1-\frac{1}{n}}{1+\frac{1}{n}+\frac{1}{n^2}+\frac{1}{n^3}} &=& \dfrac{1-\frac{1}{n}}{1+\frac{1}{n}+\frac{1}{n^2}+\frac{1}{n^3}}
+			\end{align*}
+			Von jedem dieser Summanden existiert der Grenzwert. Es folgt also allgemein:
+			\[
+				\dfrac{1-\frac{1}{n}}{1+\frac{1}{n}+\frac{1}{n^2}+\frac{1}{n^3}} \ \longrightarrow \ \dfrac{1-0}{1+0+0+0} = 1
+			\]
+			Die angegebene Folge konvergiert also gegen den Wert $1$.
+
+		% subsubsection a_ (end)
+
+		\subsubsection*{b)} % (fold)
+		\label{ssub:b_}
+		
+			\[
+				\dfrac{n!}{a^n} = \dfrac{n\cdot(n-1)\cdot ... \cdot 2 \cdot 1}{a\cdot a\cdot ... \cdot a\cdot a}
+			\]
+			Es existiert ein $N \in \mathbb{N}$, sodass $N > a$ gilt. Dann folgt für alle $n \in \mathbb{N}$ mit $n > N$:
+			\[
+				= \dfrac{n\cdot ... \cdot N}{a\cdot ... \cdot a}\cdot \dfrac{(N-1)\cdot ... \cdot 1}{a\cdot ... \cdot a} = \dfrac{n}{a}\cdot ... \cdot \dfrac{N}{a} \cdot \dfrac{(N-1)\cdot ... \cdot 1}{a\cdot ... \cdot a}
+			\]
+			Bei dem rechten Faktor handelt es sich um eine Konstante. Für $m:= \frac{(N-1)\cdot ... \cdot 1}{a\cdot ... \cdot a}$ gilt also:
+			\[
+				= m\cdot \dfrac{n}{a}\cdot ... \cdot \dfrac{N}{a}
+			\]
+			Jeder übrige Faktor ist größer $1$, wegen $N>a$. Dabei ist der rechte Faktor nun der kleinste Faktor, da alle anderen Zähler größer sind. Sei $q:=N/a>1$. Dann folgt:
+			\[
+				=m\cdot \dfrac{n}{a}\cdot ... \cdot \dfrac{N}{a} \geq m \cdot \dfrac{N}{a}\cdot ... \cdot \dfrac{N}{a} = m\cdot q^{n-N+1} = \dfrac{m}{q^{N-1}}\cdot q^n
+			\]
+			Der linke Faktor ist nun wieder eine Konstante, welche positiv sein muss, da es sich bei ihrer Zusammensetzung immer um positive Größen handelt. Aus der Vorlesung ist bekannt, dass $q^n \longrightarrow \infty$ gilt. Es folgt also:
+			\[
+				\dfrac{m}{q^{N-1}}\cdot q^n \longrightarrow \infty \ \Rightarrow \ \dfrac{n!}{a^n} \longrightarrow \infty
+			\]
+
+
+		% subsubsection b_ (end)
+
+	% subsection aufgabe_2 (end)
+
+	\newpage
+
+	\subsection*{Aufgabe 3} % (fold)
+	\label{sub:aufgabe_3}
+	
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Sei die Folge $(a_n)_{n\in \mathbb{N}}$ rekursiv definiert mit $a_1\geq 0$ und \\
+				$a_{n+1}:=\frac{3(1+a_n)}{3+a_n}$ für alle $n \in \mathbb{N}$.
+			\item[Behauptung:] \hfill \\
+				$(a_n)$ ist eine Cauchy-Folge.
+			\item[Beweis:]
+		\end{description}
+		
+			Sei die Folge wie in der Voraussetzung. Dann gilt für alle $n \in \mathbb{N}$:
+			\[
+				a_{n+1} = \dfrac{3(1+a_n)}{3+a_n} = \dfrac{3+3a_n}{3+a_n}-a_n+a_n = \dfrac{3+3a_n}{3+a_n} - \dfrac{(3+a_n)a_n}{3+a_n} +a_n = a_n + \dfrac{3-a_n^2}{3+a_n} 
+			\]
+			\[
+				= a_n + \dfrac{(\sqrt{3}+a_n)(\sqrt{3}-a_n)}{3+a_n} 
+			\]
+
+			\paragraph{Fall $a_1^2<3$:} % (fold)
+			\label{par:fall_}
+			
+				$n=1$: $\Rightarrow 0 \ \leq a_1 < \sqrt{3}$\\
+
+				$n\ \Rightarrow \ n+1$:
+				\[
+					a_n < \sqrt{3} \ \Rightarrow \ \sqrt{3}-a_n > 0
+				\]
+				\[
+					\sqrt{3} < 3 \ \Rightarrow \ \sqrt{3}+ a_n < 3+a_n \ \Rightarrow \ 0 < \dfrac{\sqrt{3}+a_n}{3+a_n} < 1
+				\]
+				Aufgrund dieser beiden Bedingungen folgt:
+				\[
+					a_{n+1} = a_n + \dfrac{(\sqrt{3}+a_n)(\sqrt{3}-a_n)}{3+a_n} < a_n + (\sqrt{3}-a_n) = \sqrt{3} \ \Rightarrow \ a_{n+1}^2 < 3
+				\]
+				Damit gilt allgemein für alle $n \in \mathbb{N}$:
+				\[
+					a_1^2 < 3 \ \Rightarrow \ a_n^2 < 3
+				\]
+				Es folgt außerdem aus der Definition heraus, wegen eben dieser Bedingung:
+				\[
+					a_{n+1}-a_n = \dfrac{3-a_n^2}{3+a_n} > 0 \ \Rightarrow \ a_{n+1} > a_n
+				\]
+				Die Folge ist also für $a_1^2<3$ monoton steigend und nach oben beschränkt durch $\sqrt{3}$. Aus der Vorlesung ist bekannt, dass es sich dann auch um eine Cauchy Folge handeln muss.
+				In der letzten Übung wurde gezeigt, dass dann Folgendes für den Grenzwert $s \in \mathbb{R}$ der Folge gilt:
+				\[
+					s = \dfrac{3(1+s)}{3+s} \ \Rightarrow \ 3s+s^2=3+3s \ \Rightarrow \ s^2 = 3 \ \Rightarrow \ 0<s=\sqrt{3}
+				\]
+				Der Grenzwert der Folge ist also $\sqrt{3}$.
+
+			% paragraph fall_ (end)
+
+	% subsection aufgabe_3 (end)
+
+\end{document}

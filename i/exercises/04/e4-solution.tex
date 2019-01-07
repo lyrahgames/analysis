@@ -1,0 +1,399 @@
+\documentclass[11pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{float}
+
+\usepackage{geometry}
+\geometry{a4paper, lmargin=30mm, rmargin=20mm, tmargin=30mm, bmargin=20mm}
+
+\setlength{\parindent}{0mm}
+
+\begin{document}
+
+	\begin{center} \section*{Analysis I - Übungsserie 4} \end{center}
+
+	Übungsgruppe: Jonas Franke \\
+
+
+	Nina Held: 144753 \\
+	Clemens Anschütz: 146390 \\
+	Markus Pawellek: 144645 \\
+
+
+	\subsection*{Aufgabe 1}
+
+	Sei $(K,+,\cdot)$ ein angeordneter Körper. Dann gilt für alle $a,b \in K$ folgendes:
+
+	\[ (a+b)^2 = (a+b)\cdot (a+b) = a\cdot(a+b) + b\cdot(a+b) = a\cdot a + a\cdot b + b\cdot a + b\cdot b \]
+	\[ = a^2 + ab\cdot(1+1) + b^2 = a^2 + 2ab + b^2 \]
+
+	Außerdem gilt nach einer analogen Herleitung:
+
+	\[ (a-b)^2 = (a-b)\cdot(a-b) = a^2 -ab - ab + b^2 = a^2 -2ab+b^2 \]
+
+	Damit gilt allgemein für alle $a,b \in K$:
+
+	\[ (a+b)^2 = a^2 + 2ab + b^2 \]
+	\[ (a-b)^2 = a^2 - 2ab + b^2 \]
+
+	Des Weiteren folgt aus der bereits bewiesenen Proposition $x^2 \geq 0$ für alle $x \in K$:
+
+	\[ (a+b)^2 \geq 0 \]
+	\[ (a-b)^2 \geq 0 \]
+
+
+	\subsubsection*{ a)}
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Sei $(K,+,\cdot)$ ein angeordneter Körper. \hfill 
+			\item[Behauptung:] \hfill \\
+				$|ab| \leq \dfrac{1}{2\lambda}a^2 + \dfrac{\lambda}{2}b^2$ für alle $a$,$b$,$\lambda$ $\in K$ mit $\lambda > 0$ \hfill 
+			\item[Beweis:] 
+		\end{description}
+
+		Seien $a,b,\lambda$ wie in der Behauptung definiert. Dann gilt allgemein:
+
+		\[ (a-\lambda b)^2 \geq 0 \]
+		\[ a^2 - 2a\lambda b + \lambda^2b^2 \geq 0 \]
+
+		Durch Addition von $2a\lambda b$ ergibt sich:
+
+		\[ a^2 + \lambda^2b^2 \geq 2a\lambda b \]
+
+		Durch Multiplikation mit $2^{-1}$ kann sich die Ungleichung nicht ändern, da $(2 > 0) \Rightarrow (2^{-1} > 0)$.
+		Auch durch die Multiplikation mit $\lambda^{-1}$ kann keine Änderung auftreten, da $(\lambda > 0) \Rightarrow (\lambda^{-1} > 0)$.
+
+		\[2^{-1}\cdot \lambda^{-1}\cdot a^2 + 2^{-1}\cdot \lambda^{-1} \cdot \lambda \cdot \lambda \cdot b^2 \geq 2^{-1}\cdot 2 \cdot \lambda^{-1} \cdot \lambda \cdot a\cdot b \]
+
+		\[ \dfrac{1}{2\lambda}a^2 + \dfrac{\lambda}{2}b^2 \geq ab \]
+
+		Weiterhin gilt:
+
+		\[ (a+\lambda b)^2 \geq 0 \]
+		\[ a^2 + 2a\lambda b + \lambda^2b^2 \geq 0 \]
+
+		Durch Addition von $-2a\lambda b$ ergibt sich:
+
+		\[ a^2 + \lambda^2b^2 \geq -2a\lambda b \]
+
+		Durch Multiplikation mit $2^{-1}$ kann sich die Ungleichung nicht ändern, da $(2 > 0) \Rightarrow (2^{-1} > 0)$.
+		Auch durch die Multiplikation mit $\lambda^{-1}$ kann keine Änderung auftreten, da $(\lambda > 0) \Rightarrow (\lambda^{-1} > 0)$.
+
+		\[2^{-1}\cdot \lambda^{-1}\cdot a^2 + 2^{-1} \cdot \lambda^{-1} \cdot \lambda \cdot \lambda \cdot b^2 \geq (-1) \cdot 2^{-1}\cdot 2 \cdot \lambda^{-1} \cdot \lambda \cdot a\cdot b \]
+
+		\[ \dfrac{1}{2\lambda}a^2 + \dfrac{\lambda}{2}b^2 \geq -ab \]
+
+		Bei allen Umformungen handelte es sich um äquivalente Umformungen.\\
+
+		Der Betrag von $ab$ kann entweder den Wert $-ab$ oder den Wert $ab$ annehmen. Für beide Fälle ist diese Ungleichung gezeigt worden. Damit gilt also allgemein:
+
+		\[|ab| \leq \dfrac{1}{2\lambda}a^2 + \dfrac{\lambda}{2}b^2 \]
+		$\hfill\Box$
+
+
+	\subsubsection*{b)}
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Sei $(K,+,\cdot)$ ein angeordneter Körper. \hfill 
+			\item[Behauptung:] \hfill \\
+				$(a+b)^2 \geq 4ab$ für alle $a,b\in K$ \hfill 
+			\item[Beweis:] 
+		\end{description}
+
+		Seien $a,b \in K$. Dann gilt:
+
+		\[ (a-b)^2 \geq 0 \]
+
+		Addiert man zu beiden Seiten $(a+b)^2$ folgt:
+
+		\[ (a+b)^2 + (a-b)^2 \geq (a+b)^2 \]
+		\[ (a+b)^2 + a^2 -2ab + b^2 \geq a^2 + 2ab + b^2 \]
+
+		Durch Addition von $2ab$ ergibt sich:
+
+		\[ (a+b)^2 + a^2 + b^2 \geq a^2 + 4ab + b^2 \]
+
+		Nun addiert man $-a^2$ und $-b^2$:
+
+		\[ (a+b)^2 \geq 4ab \]
+
+		Damit wurde die Behauptung gezeigt, da es sich bei allen Umformungen um äquivalente Umformungen handelte. $\hfill\Box$ 
+
+	\newpage
+
+	\subsection*{Aufgabe 2}
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Sei $(K,+,\cdot)$ ein angeordneter Körper. \hfill 
+			\item[Behauptung:] \hfill \\
+				$\dfrac{r}{1+r} < \dfrac{s}{1+s}$ für alle $r,s\in K$ mit $0\leq r<s$ \hfill 
+			\item[Beweis:] 
+		\end{description}
+
+		Seien $r,s$ wie in der Behauptung definiert. Dann gilt:
+
+		\[ r < s \]
+
+		Durch die Addition von $sr$ ergibt sich:
+
+		\[ r+sr < s + sr \]
+		\[ r\cdot (1+s) < s \cdot (1+r) \]
+
+		Da $r,s \geq 0$ muss $(r+1),(s+1) > 0$ gelten. Damit müssen auch die Inversen $(r+1)^{-1}$ und $(s+1)^{-1}$ größer Null sein.
+		Also ändert sich diese Ungleichung nicht durch Multiplikation mit $(r+1)^{-1} \cdot (s+1)^{-1}$:
+
+		\[ r\cdot (1+s) \cdot (r+1)^{-1} \cdot (s+1)^{-1} < s \cdot (1+r) \cdot (r+1)^{-1} \cdot (s+1)^{-1} \]
+		\[ \dfrac{r}{r+1} < \dfrac{s}{s+1} \]
+
+		Auch hier handelt es sich immer um äquivalente Umformungen. Also wurde die Behauptung unter den Voraussetzungen gezeigt. $\hfill\Box$
+
+	\newpage
+
+	\subsection*{Aufgabe 3}
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Sei $(K,+,\cdot)$ ein angeordneter Körper mit der Teilmenge $M$. \hfill 
+			\item[Behauptung:] \hfill \\
+				$-M$ ist nach unten beschränkt $\Leftrightarrow$ $M$ ist nach oben beschränkt \hfill 
+			\item[Beweis:] 
+		\end{description}
+
+		\underline{$M$ ist nach oben beschränkt $\Rightarrow$ $-M$ ist nach unten beschränkt :} \\
+
+		Es gilt:
+
+		\[ -M = \{-m \ | \ m\in M \} \]
+
+		Für eine obere Schranke $s \in K$ von $M$ gilt für alle $m \in M$
+
+		\[ m \leq s \]
+
+		Multipliziert man diese Ungleichung mit $-1$, dann muss sich ihr Relationszeichen umkehren, damit sie weiterhin gilt.
+
+		\[ (-1)\cdot m \geq (-1)\cdot s \]
+		\[ -m \geq -s \]
+
+		Alle Elemente $-m$ für $m \in M$ befinden sich in $-M$. Damit gilt also für alle $m' \in -M$
+
+		\[ m' \geq -s \]
+
+		Für eine untere Schranke $s' \in K$ von $-M$ gilt für alle $m' \in -M$
+
+		\[ m' \geq s' \]
+
+		Da $-s \in K$, ist also $-s$ für $-M$ eine untere Schranke, wenn man $s'=-s$ setzt. Besitzt also $M$ eine obere Schranke $s \in K$, so muss $-M$ eine untere Schranke $-s$ besitzen.\\
+
+
+		\underline{$-M$ ist nach unten beschränkt $\Rightarrow$ $M$ ist nach oben beschränkt : (Beweis analog)} \\
+
+		Für eine untere Schranke $s' \in K$ von $-M$ gilt für alle $m' \in -M$
+
+		\[ m' \geq s' \]
+
+		Auch hier multipliziert man wieder mit $-1$ und erhält:
+
+		\[ -m' \leq -s' \]
+
+		Schreibt man diese Gleichung für die Elemente aus $M$ auf, folgt für alle $m \in M$:
+
+		\[ -(-m) \leq -s' \]
+		\[ m \leq -s' \]
+
+		Für eine obere Schranke $s \in K$ von $M$ gilt wieder für alle $m \in M$
+
+		\[ m \leq s \]
+
+		Setzt man nun $s=-s'$, so erkennt man, dass $-s' \in K$ eine obere Schranke für $M$ bildet. Besitzt also $-M$ eine untere Schranke $s' \in K$, so muss $M$ eine obere Schranke $-s'$ besitzen. \\
+
+		Damit wurden beide Richtungen der Äquivalenzaussage gezeigt. $\hfill\Box$ \\
+
+
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Sei $(K,+,\cdot)$ ein angeordneter Körper mit der Teilmenge $M$. \hfill 
+			\item[Behauptung:] \hfill \\
+				$sup(M)$ existiert $\Leftrightarrow$ $inf(-M)$ existiert \hfill \\
+				Es soll dann gelten: $-sup(M) = inf(-M)$ \hfill 
+			\item[Beweis:] 
+		\end{description}
+
+		\underline{$sup(M)$ existiert $\Rightarrow$ $inf(-M)$ existiert :} \\
+
+		Jedes Supremum einer Menge ist auch eine obere Schranke dieser Menge. Existiert also $sup(M) \in K$, so gibt es nach obigem Beweis eine untere Schranke $-sup(M)$ für die Menge $-M$.
+		Weiterhin gilt für alle oberen Schranken $s \in K$ von $M$:
+
+		\[ sup(M) \leq s \]
+
+		Für jede obere Schranke $s \in K$ von $M$ muss $-M$ genau eine untere Schranke $-s$ besitzen, da für jede untere Schranke in $-M$ auch eine obere Schranke in $M$ existieren muss.
+		Multipliziert man also die Ungleichung mit $-1$, so folgt:
+
+		\[ -sup(M) \geq -s \]
+
+		Da $-s$ auch eine untere Schranke von $-M$ ist, gilt für alle unteren Schranken $s' \in K$ von $-M$
+
+		\[ -sup(M) \geq s' \]
+
+		Für ein Infimum von $-M$ gilt dann:
+
+		\[ inf(-M) \geq s' \]
+
+		Damit muss nach der Definition eines Infimums $-sup(M)$ ein Infimum von $-M$ sein. Da sowohl Infimum als auch Supremum eindeutig sind, muss also
+
+		\[ -sup(M) = inf(-M) \]
+
+		gelten. Da $sup(M)$ existiert, muss demnach auch, da es sich bei $K$ um einen Körper handelt, $-sup(M)$ existieren. Also existiert auch $inf(-M)$, da diese Werte gleich sind. \\
+
+
+
+		\underline{$inf(-M)$ existiert $\Rightarrow$ $sup(M)$ existiert : (Beweis analog)} \\
+
+		Jedes Infimum einer Menge ist auch eine untere Schranke dieser Menge. Existiert also $inf(-M) \in K$, so gibt es nach obigem Beweis eine obere Schranke $-inf(-M)$ für die Menge $M$.
+		Weiterhin gilt für alle unteren Schranken $s' \in K$ von $-M$:
+
+		\[ inf(-M) \geq s' \]
+
+		Für jede untere Schranke $s' \in K$ von $-M$ muss $M$ genau eine obere Schranke $-s'$ besitzen.
+		Multipliziert man also die Ungleichung mit $-1$, so folgt:
+
+		\[ -inf(-M) \leq -s' \]
+
+		Da $-s'$ auch eine obere Schranke von $M$ ist, gilt für alle oberen Schranken $s \in K$ von $M$
+
+		\[ -inf(-M) \leq s \]
+
+		Für ein Supremum von $M$ gilt dann:
+
+		\[ sup(M) \leq s \]
+
+		Damit muss nach der Definition eines Supremums $-inf(-M)$ ein Supremum von $M$ sein. Da sowohl Infimum als auch Supremum eindeutig sind, muss also
+
+		\[ sup(M) = -inf(-M) \]
+		\[ -sup(M) = inf(-M) \]
+
+		gelten. Da $inf(-M)$ existiert, muss demnach auch, da es sich bei $K$ um einen Körper handelt, $-inf(-M)$ existieren. Also existiert auch $sup(M)$, da diese Werte gleich sind.\\
+
+
+		Damit wurde die äquivalente Aussage gezeigt. Aus beiden Richtungen folgt dann 
+
+		\[-sup(M) = inf(-M) \]
+		 $\hfill\Box$
+ 
+
+	\newpage
+
+ 	\subsection*{Aufgabe 4}
+
+ 		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Sei $\mathbb{Q}$ der Körper der rationalen Zahlen. \hfill 
+			\item[Behauptung:] \hfill \\
+				$\{ q\in \mathbb{Q} \ | \ q^2 \leq 2 \}$ besitzt kein Supremum \hfill
+			\item[Beweis:] 
+		\end{description}
+
+		Für $\mathbb{Q}$ gilt:
+
+		\[ \mathbb{Q} = \left\{ \dfrac{n}{m} \ \vert \ n \in \mathbb{Z} \ m \in \mathbb{N} \right\} \]
+
+		Sei die Menge $T$ definiert als:
+
+		\[ T := \{ q\in \mathbb{Q} \ | \ q^2 \leq 2 \} \]
+
+		Dann gilt für alle $q \in T$:
+
+		\[ q^2 \leq 2 \]
+
+		Aus den Beweisen der Vorlesung ist bekannt, dass dann  für alle $q \in T$
+
+		\[ q \leq \sqrt{2} \]
+
+		gilt, sofern $q \geq 0$ erfüllt ist. Ist  $q < 0$, so reicht es, diese Ungleichung mit $-1$ zu multiplizieren.
+		Wenn also nun $\sqrt{2} \in \mathbb{Q}$ ist, so muss nach der Definition einer oberen Schranke $\sqrt{2}$ eine obere Schranke sein.
+		Für jede weitere obere Schranke $s \in \mathbb{Q}$ muss gelten:
+
+		\[ s \geq \sqrt{2} \]
+
+		Da sonst $s \in T$ wäre. Es würde dann für alle $q \in T$ gelten:
+
+		\[ (q \leq s < \sqrt{2}) \Rightarrow (q^2 \leq s^2 < 2) \]
+
+		Damit kann man $s^2$ auch als $2-\epsilon$ für $\epsilon \in \mathbb{Q}$ und $\epsilon > 0$ beschreiben, da es sich bei $\mathbb{Q}$ um einen Körper handelt und dieser abgeschlossen zur Addition ist.
+		Damit gilt also automatisch für $a,b \in \mathbb{N}$ und für alle $q \in T$:
+
+		\[ \left(\epsilon = \dfrac{a}{b}\right) \Rightarrow (q \leq 2-\dfrac{a}{b} < 2) \]
+
+		Nun gibt es aber ein $\epsilon' \in \mathbb{Q}$, für welches Folgendes gelten kann:
+
+		\[ \epsilon' = \dfrac{a}{2b} > 0 \]
+
+		Da $a,b \in \mathbb{N}$ muss auch $2b \in \mathbb{N}$ sein.
+
+		\[ \Rightarrow \left( 2- \epsilon' = 2 - \dfrac{a}{2b} < 2 \right) \]
+
+		Damit müsste die Quadratwurzel Element von $T$ sein. Wenn nun $2-\epsilon$ eine obere Schranke bildet, dann gilt:
+
+		\[ (2-\epsilon \geq 2 -\epsilon') \Rightarrow (\epsilon \leq \epsilon') \Rightarrow (\epsilon - \epsilon' \leq 0) \]
+		\[ \epsilon - \epsilon' = \dfrac{a}{b} - \dfrac{a}{2b} = \dfrac{2a}{2b} - \dfrac{a}{2b} = \dfrac{a}{2b}\cdot (2-1) = \dfrac{a}{2b} \]
+
+		\[ (a,b \in \mathbb{N}) \Rightarrow (a,b > 0) \Rightarrow \left( \dfrac{a}{2b} > 0 \right) \Rightarrow (\epsilon - \epsilon' > 0) \]
+
+		Dies ist ein Widerspruch zur Annahme, dass $s$ eine obere Schranke ist. Damit kann also keine obere Schranke kleiner als $\sqrt{2}$ sein. $\sqrt{2}$ müsste also das Supremum von $T$ sein. Wenn also $\sqrt{2}$ als Supremum existiert, muss Folgendes für ein $p,q \in \mathbb{N}$, wenn $p$ und $q$ teilerfremd, gelten:
+
+		\[ \sqrt{2} = \dfrac{p}{q} \Rightarrow 2 = \dfrac{p^2}{q^2} \Rightarrow 2q^2 = p^2 \] 
+
+		Damit muss $p^2$ ein Vielfaches von $2$ sein. Da es sich um eine natürliche Zahl handelt, muss damit auch $p$ ein Vielfaches von $2$ darstellen. Man kann also ein $k \in \mathbb{N}$ finden, für welches $p = 2k$ ist.
+
+		\[ 2q^2 = (2k)^2 \Rightarrow 2q^2 = 4k^2 \Rightarrow q^2 = 2k^2 \]
+
+		Damit müsste also auch $q^2$ und damit auch $q$ ein Vielfaches von $2$ sein. Dies ist allerdings ein Widerspruch dazu, dass $p,q$ teilerfremd sind. Es gibt also keine Darstellung für $\sqrt{2}$ in den rationalen Zahlen. Damit existiert das Supremum von $T$ mit $\sqrt{2}$ nicht.
+
+		Eine andere Möglichkeit wäre, dass man sich eine andere obere Schranke sucht. Das Quadarat dieser oberen Schranke könnte man wieder durch $\epsilon + 2$ beschreiben. Handelt es sich um ein Supremum, müssen also alle anderen oberen Schranken größer als $\epsilon + 2$ sein. Nun können wir analog zur obigen Betrachtung ein $\epsilon' + 2$ finden, welches kleiner dieser oberen Schranke ist und dennoch nicht in $T$ ist. Damit gäbe ES auf die gleiche Weise einen Widerspruch, dass es außer $\sqrt{2}$ noch ein weiteres Supremum (ob nun kleiner oder größer) geben kann. Damit ist allgemein gezeigt, da $\sqrt{2}$ kein Element von $\mathbb{Q}$ ist , dass das Supremum von $T$ nicht existiert.$\hfill\Box$
+
+
+
+
+	\newpage
+
+	\subsection*{Zusatzaufgabe}
+
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Seien $n \in \mathbb{N}$ und $a_1,...,a_n,b_1,...,b_n \in \mathbb{R}$ gegeben. Sei $z_m := \sum_{k=1}^m a_k$ für $m \in \mathbb{N}$ mit $1\leq m\leq n$.\hfill 
+			\item[Behauptung:] \hfill \\
+				Dann gilt: $\sum_{k=1}^n a_kb_k = z_nb_n + \sum_{k=1}^{n-1} z_n(b_k - b_{k+1})$ \hfill
+			\item[Beweis:] 
+		\end{description}
+
+		Seien die Variablen und Koeffizienten wie in der Voraussetzung definiert. Dann gilt:
+
+		\[ z_nb_n + \sum_{k=1}^{n-1} z_n(b_k - b_{k+1}) =  b_n\cdot\sum_{k=1}^n a_k  +  \sum_{k=1}^{n-1}\left( (b_k - b_{k+1})\cdot \sum_{i=1}^k a_i \right) \]
+
+		Durch Ausmultiplizieren im hinteren Summenzeichen erhält man:
+
+		\[ = b_n\cdot\sum_{k=1}^n a_k  +  \sum_{k=1}^{n-1}\left( b_k\cdot \sum_{i=1}^k a_i -b_{k+1}\cdot \sum_{i=1}^k a_i \right) \]
+		\[ = b_n\cdot\sum_{k=1}^n a_k  +  \sum_{k=1}^{n-1}\left( b_k\cdot \sum_{i=1}^k a_i \right) - \sum_{k=1}^{n-1} \left(b_{k+1}\cdot \sum_{i=1}^k a_i \right) \]
+
+		Aus dem mittleren Summenzeichen soll nun das erste Element herausgezogen werden. Das gleiche soll für das letzte Element des rechten Summenzeichens getan werden.
+
+		\[ = b_n\cdot\sum_{k=1}^n a_k  + b_1\cdot\sum_{i=1}^1a_i + \sum_{k=2}^{n-1}\left( b_k\cdot \sum_{i=1}^k a_i \right) - b_n\cdot\sum_{i=1}^{n-1}a_i - \sum_{k=1}^{n-2} \left(b_{k+1}\cdot \sum_{i=1}^k a_i \right) \]
+		\[ = \left(b_n\cdot\sum_{k=1}^n a_k - b_n\cdot\sum_{i=1}^{n-1}a_i \right) + a_1b_1 + \sum_{k=2}^{n-1}\left( b_k\cdot \sum_{i=1}^k a_i \right) - \sum_{k=1}^{n-2} \left(b_{k+1}\cdot \sum_{i=1}^k a_i \right) \]
+		\[ = a_nb_n + a_1b_1 + \sum_{k=2}^{n-1}\left( b_k\cdot \sum_{i=1}^k a_i \right) - \sum_{k=1}^{n-2} \left(b_{k+1}\cdot \sum_{i=1}^k a_i \right) \]
+
+		Verschiebt man den Index des rechten Summenzeichens um $1$, folgt:
+
+		\[ = a_nb_n + a_1b_1 + \sum_{k=2}^{n-1}\left( b_k\cdot \sum_{i=1}^k a_i \right) - \sum_{k=2}^{n-1} \left(b_{k}\cdot \sum_{i=1}^{k-1} a_i \right) \]
+		\[ = a_nb_n + a_1b_1 + \sum_{k=2}^{n-1}\left( b_k\cdot \left(\sum_{i=1}^k a_i  - \sum_{i=1}^{k-1} a_i \right) \right) \]
+		\[ = a_nb_n + a_1b_1 + \sum_{k=2}^{n-1} a_kb_k \]
+		\[ = \sum_{k=1}^n a_kb_k \]
+
+		Durch äquivalente Umformungen wurde damit die Gleichheit gezeigt. $\hfill\Box$
+
+\end{document}

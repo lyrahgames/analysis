@@ -1,0 +1,431 @@
+\documentclass[10pt, a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+
+\usepackage{geometry}
+\geometry{a4paper, lmargin=30mm, rmargin=20mm, tmargin=30mm, bmargin=30mm}
+\setlength{\parindent}{0mm}
+
+\usepackage[automark]{scrpage2}
+\usepackage{lastpage}
+\pagestyle{scrheadings}
+\clearscrheadfoot
+\ihead[]{Analysis I - Übungsserie 6 \\ Übungsgruppe: Jonas Franke}
+\ohead[]{Nina Held - 144753\\ Clemens Anschütz - 146390\\ Markus Pawellek - 144645}
+\cfoot[]{\pagemark/\pageref{LastPage}}
+\setheadsepline[\textwidth]{0.5pt}
+
+\begin{document}
+
+	\begin{center}
+		\section*{Analysis - Übungsserie 7} % (fold
+		% section analysis_übungsserie_7 (end)
+	\end{center}
+
+	\subsection*{Aufgabe 1} % (fold)
+	\label{sub:aufgabe_1}
+	
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Sei $a > 0$ und $k \in \mathbb{N}$ beliebig. Definiere induktiv die Folge $(x_n)$ durch $x_0:=c > 0$ beliebig und\\
+				$x_{n+1} := \frac{1}{k}\left( (k-1)x_n + \frac{a}{x_n^{k-1}} \right) = x_n + \frac{x_n}{k}\left( \frac{a}{x_n^k} - 1 \right)$.
+			\item[Behauptung:] \hfill \\
+				$x_n \longrightarrow \sqrt[k]{a}, \ n \longrightarrow \infty$
+			\item[Beweis:]
+		\end{description}
+		
+		Seien die Definitionen der Variablen und der Folge wie in der Voraussetzung und der Behauptung gegeben.
+		Es soll durch Induktion gezeigt werden, dass $x_n > 0$ für alle $n \in \mathbb{N}$ gilt.
+
+		\paragraph{Induktionsanfang:} % (fold)
+		\label{par:induktionsanfang}
+			
+			Aus den Definitionen folgt, dass $a,x_0,k > 0$ immer gelten muss. Dann gilt:
+			\[
+				x_1 = \dfrac{1}{k}\left( (k-1)x_0 + \dfrac{a}{x_0^{k-1}} \right)
+			\]
+			Es muss also auch das Inverse von $k$ größer Null sein. Der rechte Faktor enthält eine Summe. Es folgt, dass $k-1 \geq 0$ (da $k \in \mathbb{N}$) und damit muss ebenfalls $(k-1)x_0 \geq 0$ gelten.
+			Weiterhin folgt, dass $x_0^k > 0$ gilt (wegen $x_0 > 0$). Damit muss auch $a/x_0^{k-1} > 0$ sein. Die Summe im rechten Faktor besteht also aus positiven Summanden. Also muss dieser Faktor insgesamt ebenfalls positiv sein. Durch Multiplikation zweier positiver Zahlen muss wieder eine positive Zahl entstehen. Also gilt, dass $x_1 > 0$. Der Induktionsanfang ist also für $n = 1$ gezeigt.
+
+		% paragraph induktionsanfang (end)
+
+		\paragraph{Induktionsvoraussetzung:} % (fold)
+		\label{par:induktionsvoraussetzung_}
+		
+			$x_n > 0$
+
+		% paragraph induktionsvoraussetzung_ (end)
+
+		\paragraph{Induktionsbehauptung:} % (fold)
+		\label{par:induktionsbehauptung_}
+		
+			$x_{n+1} > 0$
+
+		% paragraph induktionsbehauptung_ (end)
+
+		\paragraph{Induktionsschluss:} % (fold)
+		\label{par:induktionsschluss_}
+		
+			\[
+				x_{n+1} = \frac{1}{k}\left( (k-1)x_n + \frac{a}{x_n^{k-1}} \right)
+			\]
+
+			Auch hier ist die Argumentation analog. $1/k$ ist positiv. Der rechte Faktor besteht wieder aus zwei positiven Summanden, sofern man die Induktionsvoraussetzung ($x_n > 0$) beachtet. Denn es gilt wieder $(k-1)x_n > 0$ und auch $a/x_n^{k-1} > 0$. Damit muss auch $x_{n+1} > 0$ gelten, da es sich aus dem Produkt zweier positiver Faktoren zusammensetzt.\\
+
+		% paragraph induktionsschluss_ (end)
+
+		Für alle $n \in \mathbb{N}$ gilt also: $x_n > 0$. Es gilt also, dass $(x_n)$ nach unten durch Null beschränkt ist. Damit ist es also erlaubt für alle $n \in \mathbb{N}$ durch $x_n$ zu teilen:
+		\[
+			x_{n+1} = x_n + \frac{x_n}{k}\left( \frac{a}{x_n^k} - 1 \right) \ \Rightarrow \ \dfrac{x_{n+1}}{x_n} = 1 + \dfrac{1}{k}\left( \frac{a}{x_n^k} - 1 \right)
+		\]
+		Nimmt man diese Gleichung hoch $k$ erkennt man mithilfe der Bernoulli-Ungleichung für alle $n \in \mathbb{N}$:
+		\[
+			\Rightarrow \ \dfrac{x_{n+1}^k}{x_n^k} = \left[ 1 + \dfrac{1}{k}\left( \frac{a}{x_n^k} - 1 \right) \right]^k \geq 1 + \dfrac{k}{k}\left( \frac{a}{x_n^k} - 1 \right) = 1 + \frac{a}{x_n^k} -1 = \frac{a}{x_n^k}
+		\]
+		\[
+			\Rightarrow \ \dfrac{x_{n+1}^k}{x_n^k} \geq \frac{a}{x_n^k} \ \Rightarrow \ x_{n+1}^k \geq a \ \Rightarrow \ x_n^k \geq a \text{ für alle } n \geq 2
+		\]
+		Für die Überprüfung der Monotonie folgt aus Definitionsgründen:
+		\[
+			x_{n+1} - x_n = \frac{x_n}{k}\left( \frac{a}{x_n^k} - 1 \right)
+		\]
+		Es muss der linke Faktor größer Null sein, da es sich bei $k$ und $x_n$ für alle $n \in \mathbb{N}$ um positive Größen handelt. Für $n \in \mathbb{N}$ mit $n \geq 2$ ist $x_n^k > a$. Damit muss der Bruch im zweiten Faktor für alle $n \in \mathbb{N}$ mt $n \geq 2$ kleiner $1$ werden. Die Summe muss also insgesamt kleiner als Null werden. Damit wird auch der rechte Faktor negativ. Es folgt also für alle $n\in \mathbb{N}$ mit $n \geq 2$
+		\[
+			x_{n+1} - x_n \leq 0 \ \Rightarrow \ x_{n+1} \leq x_n
+		\]
+		Damit ist $(x_n)_{n\geq2}$ monoton fallend. Da $(x_n)$ auch durch Null nach unten beschränkt ist, folgt also, dass $(x_n)$ konvergiert. Damit gibt es für alle $\varepsilon > 0$ ein $n_{\varepsilon}\in \mathbb{N}$, sodass $|x_n-x| < \varepsilon$ für alle $n \geq n_{\varepsilon}$, sofern es sich bei $x \in \mathbb{R}$ um den Grenzwert von $(x_n)$ handelt. Es gilt also:
+		\begin{eqnarray*}
+			x_n \longrightarrow x,&  n \longrightarrow \infty \\
+			x_{n+1} \longrightarrow x,&  n \longrightarrow \infty
+		\end{eqnarray*}
+		Damit muss also für den Grenzwert $x$ (also wenn $n \longrightarrow \infty$ gilt) der obigen Gleichung Folgendes gelten:
+		\[
+			x = x + \frac{x}{k}\left( \frac{a}{x^k} - 1 \right) \ \Rightarrow \ 0 = \frac{x}{k}\left( \frac{a}{x^k} - 1 \right)
+		\]
+		Sowohl bei $x$ als auch bei $k$ handelt es sich um positive Größen. Damit kann also nur der rechte Faktor Null sein.
+		\[
+			\Rightarrow \ 0 = \frac{a}{x^k} - 1 \ \Rightarrow \ \frac{a}{x^k} = 1 \ \Rightarrow \ x^k = a \ \Rightarrow \ x = \sqrt[k]{a}
+		\]
+		Damit ist gezeigt, dass der Grenzwert existiert und dass er gegen den Wert $\sqrt[k]{a}$ läuft. $\hfill\Box$
+		
+
+	% subsection aufgabe_1 (end)
+
+	\newpage
+
+	\section*{Aufgabe 2} % (fold)
+	\label{sec:aufgabe_2}
+	
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				$e(a) = \lim_{n\rightarrow\infty}\left( 1+\frac{a}{n} \right)^n$
+			\item[Behauptung:] \hfill \\
+				Für $a > 0$ gilt
+				$\lim_{n\rightarrow\infty}\left(1-\frac{a}{n}\right)^n = \frac{1}{e(a)}$
+			\item[Beweis:]
+		\end{description}
+		
+		Seien alle Definitionen wie in den Voraussetzungen und Behauptungen gegeben. Allgemein gilt dann für alle $n \in \mathbb{N}$ nach der bereits gezeigten dritten binomischen Formel:
+		\[
+			\left(1+\dfrac{a}{n}\right)^n\left(1-\dfrac{a}{n}\right)^n = \left[ \left(1+\dfrac{a}{n}\right) \left(1-\dfrac{a}{n}\right) \right]^n = \left(1-\dfrac{a^2}{n^2}\right)^n
+		\]
+		Durch Anwendung der Bernoulli-Ungleichung folgt:
+		\[
+			\left(1-\dfrac{a^2}{n^2}\right)^n \geq 1 - \dfrac{a^2}{n}
+		\]
+		Weiterhin gilt, dass $a^2 > 0$ und auch $n^2 > 0$.
+		\[
+			\Rightarrow \ \dfrac{a^2}{n^2} > 0 \ \Rightarrow \ 1-\dfrac{a^2}{n^2} < 1 \ \Rightarrow \ \left( 1-\dfrac{a^2}{n^2} \right)^n < 1
+		\]
+		Es folgt also:
+		\[
+			1 - \dfrac{a^2}{n} \leq \left( 1-\dfrac{a^2}{n^2} \right)^n < 1
+		\]
+		Bei $a^2$ handelt es sich um eine Konstante. Bei der linken Folge handelt es sich also  um eine konvergierende Folge. Es ist bekannt, dass die Folge $k/n$ für $n \in \mathbb{N}$ und für $k \in \mathbb{R}$ gegen Null konvergiert. Durch Anwendung der Grenzwertrechengesetze folgt: 
+		\[
+			1 - \dfrac{a^2}{n} \longrightarrow 1-0= 1, \ n \longrightarrow \infty
+		\]
+		Nun gilt nach dem Sandwich-Theorem für die eigentliche Folge:
+		\[
+			\left(1-\dfrac{a^2}{n^2}\right)^n = \left(1+\dfrac{a}{n}\right)^n\left(1-\dfrac{a}{n}\right)^n \longrightarrow 1, \ n \longrightarrow \infty
+		\]
+		Das Produkt der beiden Folgen konvergiert gegen den Wert $1$. Da nun gilt $e(a) = \lim_{n\rightarrow\infty}\left( 1+\frac{a}{n} \right)^n\neq 0$, muss auch $\left(\left(1-\frac{a}{n}\right)^n\right)$ einen Grenzwert ungleich Null besitzen. Zwei Folgen können durch Multiplikation nur einen Grenzwert ungleich Null ermöglichen, wenn für beide Folgen der Grenzwert ungleich Null existiert (denn die Multiplikation eines Grenzwertes ungleich Null mit dem Grenzwert Null ergibt Null). Würde es sich bei der rechten Folge nicht um eine konvergierende Folge handeln, dann würde diese immer (aufgrund der Konvergenz der linken Folge) mit Werten größer $1$ multipliziert werden. Die Multiplikation der beiden Folgen könnte dann also auch nicht gegen $1$ konvergieren.
+		Existiert also der Grenzwert von $\left(\left(1-\frac{a}{n}\right)^n\right)$, so folgt nach den Rechenregeln für Grenzwerte:
+		\[
+			\Rightarrow \ \lim_{n\rightarrow\infty}\left[ \left(1+\dfrac{a}{n}\right) \left(1-\dfrac{a}{n}\right) \right]^n = \lim_{n\rightarrow\infty}\left(1+\dfrac{a}{n}\right)^n \cdot \lim_{n\rightarrow\infty}\left(1-\dfrac{a}{n}\right)^n = e(a)\cdot \lim_{n\rightarrow\infty}\left(1-\dfrac{a}{n}\right)^n = 1
+		\]
+		\[
+			\Rightarrow \ \lim_{n\rightarrow\infty}\left(1-\dfrac{a}{n}\right)^n = \dfrac{1}{e(a)}
+		\]
+		Der Grenzwert entspricht also der Behauptung. $\hfill\Box$
+
+	% section aufgabe_2 (end)
+
+	\newpage
+
+	\section*{Aufgabe 3} % (fold)
+	\label{sec:aufgabe_3}
+	
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Seien $(x_n),(y_n)$ Folgen in $\mathbb{R}$ mit $x_n\longrightarrow 0$ und $y_n \longrightarrow \infty$.
+		\end{description}
+		
+		\subsubsection*{a)} % (fold)
+		\label{ssub:a_}
+			
+			Für alle $n \in \mathbb{N}$ soll definiert werden:
+			\begin{eqnarray*}
+				x_n &:=& \dfrac{1}{n} \longrightarrow 0 \\
+				y_n &:=& n^2 \longrightarrow \infty
+			\end{eqnarray*}
+			In der Vorlesung beziehungsweise in der Übung wurde bereits gezeigt, dass die aufgezeigten Grenzwerte gelten. Dann folgt:
+			\[
+				x_ny_n = \dfrac{n^2}{n} = n \longrightarrow \infty
+			\]
+
+		% subsubsection a_ (end)
+		
+		\subsubsection*{b)} % (fold)
+		\label{ssub:b_}
+		
+			Für alle $n \in \mathbb{N}$ soll definiert werden:
+			\begin{eqnarray*}
+				x_n &:=& -\dfrac{1}{n} \longrightarrow 0 \\
+				y_n &:=& n^2 \longrightarrow \infty
+			\end{eqnarray*}
+			In der Vorlesung beziehungsweise in der Übung wurde bereits gezeigt, dass die aufgezeigten Grenzwerte gelten. Dann folgt:
+			\[
+				x_ny_n = -\dfrac{n^2}{n} = -n \longrightarrow -\infty
+			\]
+
+		% subsubsection b_ (end)
+
+		\subsubsection*{c)} % (fold)
+		\label{ssub:c_}
+		
+			Für alle $n \in \mathbb{N}$ soll definiert werden:
+			\begin{eqnarray*}
+				x_n &:=& \dfrac{1}{n^2} \longrightarrow 0 \\
+				y_n &:=& n \longrightarrow \infty
+			\end{eqnarray*}
+			In der Vorlesung beziehungsweise in der Übung wurde bereits gezeigt, dass die aufgezeigten Grenzwerte gelten. Dann folgt:
+			\[
+				x_ny_n = \dfrac{n}{n^2} = \dfrac{1}{n} \longrightarrow 0
+			\]
+			$x_ny_n$ ist damit konvergent.
+
+		% subsubsection c_ (end)
+
+		\subsubsection*{d)} % (fold)
+		\label{ssub:d_}
+		
+			Für alle $n \in \mathbb{N}$ soll definiert werden:
+			\begin{eqnarray*}
+				x_n &:=& \dfrac{(-1)^n}{n} \longrightarrow 0 \\
+				y_n &:=& n \longrightarrow \infty
+			\end{eqnarray*}
+			Dann folgt:
+			\[
+				x_ny_n = \dfrac{(-1)^n}{n}\cdot n = (-1)^n 
+			\]
+			Bei $(-1)^n$ handelt es sich nicht um eine konvergente oder bestimmt divergente Folge. Damit muss es sich bei dieser Folge also um eine divergente Folge handeln. Sie bewegt sich nur zwischen den Werten $-1$ und $1$. Damit ist sie außerdem nach oben und auch unten beschränkt. Nur durch Multiplikation mit einer Folge, welche gegen den Wert Null konvergiert, könnte sie neutralisiert werden (siehe $(x_n)$).
+
+		% subsubsection d_ (end)
+
+	% section aufgabe_3 (end)
+
+	\newpage
+
+	\subsection*{Aufgabe 4} % (fold)
+	\label{sub:aufgabe_4}
+	
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Sei $M$ eine Teilmenge von $\mathbb{R}$.
+			\item[Behauptung:] \hfill \\
+				Es existiert eine Folge $(x_n)$ in $M$ mit $x_n \longrightarrow \infty$  $\ \Leftrightarrow \ $ $\sup M = \infty$ 
+			\item[Beweis:]
+		\end{description}
+		
+		Sei $M \subset \mathbb{R}$. Sei die Folge $(x_n)_{n \in \mathbb{N}}$ in $M$ mit $x_n \longrightarrow \infty$. Dann gibt es für alle $c \in \mathbb{R}$ ein $n_c \in \mathbb{N}$, sodass für alle $n \geq n_c$ gilt:
+		\[
+			x_n > c
+		\]
+		Weiterhin gilt für alle $n \in \mathbb{N}$:
+		\[
+			x_n \in M
+		\]
+		Nun soll angenommen werden, dass $M$ eine obere Schranke $s \in \mathbb{R}$ besitzt. Dann gilt für alle $m \in M$:
+		\[
+			m \leq s
+		\]
+		Zu jeder oberen Schranke $s$ gibt es jedoch mindestens ein $x_n \in M$, sodass $x_n > s$ gilt (wegen $x_n \longrightarrow \infty$). Es ergibt sich ein Widerspruch zu der Aussage, dass es sich bei $s$ um eine obere Schranke handeln kann. $M$ kann also keine obere Schranke besitzen. Dies ist äquivalent zu $\sup M = \infty$. Es gilt:
+		\[
+			\text{Es existiert eine Folge $(x_n)$ in $M$ mit } x_n \longrightarrow \infty  \ \Rightarrow \  \sup M = \infty
+		\]
+
+		Sei nun $M \subset \mathbb{R}$ mit $\sup M = \infty$. Dann besitzt $M$ keine obere Schranke. Das bedeutet, dass man zu jedem $c \in \mathbb{R}$ ein $m \in M$ finden kann, sodass $m > c$ gilt. Man kann also nun eine Folge $(x_n)$ in $M$ finden, sodass für alle $c \in \mathbb{R}$ immer ein $x_n \in M$ mit $x_n > c$ für $n \in \mathbb{N}$ existiert. Damit ist diese Folge also nicht nach oben beschränkt. Nun definiert man $x_1 \in M$ und $x_{n} \in M$ und $x_{n+1} > x_{n}$ für alle $n \in \mathbb{N}$. Dies ist möglich, da es zu einem gegebenen $m \in M$ immer ein größeres Element in $M$ geben muss. Dann handelt es sich bei der Folge $(x_n)$ um eine nicht nach oben beschränkte monoton wachsende Folge. Aus der Vorlesung ist dann bekannt, dass folgt:
+		\[
+			x_n \longrightarrow \infty, \ n \longrightarrow \infty
+		\]
+		Es existiert also eine Folge mit den gewünschten Bedingungen in $M$.
+		\[
+			\sup M = \infty \ \Rightarrow \text{ Es existiert eine Folge $(x_n)$ in $M$ mit } x_n \longrightarrow \infty
+		\]
+		Die beiden Aussagen sind also äquivalent zueinander. $\hfill\Box$
+		
+		
+		% paragraph paragraph_name (end)
+
+	% subsection aufgabe_4 (end)
+
+	\newpage
+
+	\subsection*{Zusatzaufgabe:} % (fold)
+	\label{sub:zusatzaufgabe_}
+	
+		\begin{description}
+			\item[Voraussetzung:] \hfill \\
+				Sei $I_n := [a_n,b_n],\ n\in \mathbb{N}$ eine Folge abgeschlossener, nichtleerer Intervalle in $\mathbb{R}$ mit $I_{n+1}\subseteq I_n$ für alle $n \in \mathbb{N}$.
+				Sei $S:= \bigcap_{n\in \mathbb{N}} I_n$.
+			\item[Behauptung:] \hfill \\
+				$S$ ist ein abgeschlossenes, nichtleeres Intervall mit $S = [\sup a_n, \inf b_n]$ für $n \in \mathbb{N}$.\\
+				$S$ besteht genau dann aus einem Punkt, wenn $|I_n|\longrightarrow 0$ gilt.
+			\item[Beweis:]
+		\end{description}
+		
+		Durch Induktion soll gezeigt werden, dass $I_m \subseteq I_n$ für alle $m,n \in \mathbb{N}$ mit $m \geq n$ gilt.
+
+		\paragraph{Induktionsanfang:} % (fold)
+		\label{par:induktionsanfang_}
+		
+			Für $k \in \mathbb{N}$ beliebig gilt:
+			\[
+				I_{k+1} \subseteq I_{k}
+			\]
+			Induktionsanfang ist für ein $k \in \mathbb{N}$ immer erfüllt.
+
+		% paragraph induktionsanfang_ (end)
+
+		\paragraph{Induktionsvoraussetzung:} % (fold)
+		\label{par:induktionsvoraussetzung_}
+		
+			Für ein $n,k \in \mathbb{N}$ mit $n > k$ gilt:
+			$I_{n} \subseteq I_{k}$
+
+		% paragraph induktionsvoraussetzung_ (end)
+
+		\paragraph{Induktionsbehauptung:} % (fold)
+		\label{par:induktionsbehauptung_}
+		
+			Dann gilt für die gleichen Variablen:
+			$I_{n+1} \subseteq I_{k}$
+
+		% paragraph induktionsbehauptung_ (end)
+
+		\paragraph{Induktionsschluss:} % (fold)
+		\label{par:induktionsschluss_}
+		
+			Allgemein gilt also für die gleichen Variablen:
+			\[
+				I_{n+1} \subseteq I_{n} \subseteq I_{k} \ \Rightarrow \ I_{n+1} \subseteq I_{k}
+			\]
+			Damit wurde die Induktionsbehauptung gezeigt.\\
+
+		% paragraph induktionsschluss_ (end)
+
+		Für alle $n \in \mathbb{N}$ muss, da es sich bei $I_n$ um ein abgeschlossenes Intervall handelt, $a_n \leq b_n$ gelten. Für beliebige $m,n in \mathbb{N}$ gilt nun:
+
+		\paragraph{Fall $m>n$:} % (fold)
+		\label{par:fall_}
+		
+			\[
+				\Rightarrow \ I_m\subseteq I_n \ \Rightarrow \ a_m \leq b_m \leq b_n
+			\]
+
+		% paragraph fall_ (end)
+
+		\paragraph{Fall $m = n$:} % (fold)
+		\label{par:fall_}
+		
+			\[
+				\Rightarrow \ a_m = a_n \leq b_n = b_m
+			\]
+
+		% paragraph fall_ (end)
+
+		\paragraph{Fall $m < n$:} % (fold)
+		\label{par:fall_}
+		
+			\[
+				\Rightarrow I_n \subseteq I_m \ \Rightarrow \ a_m \leq a_n \leq b_n
+			\]
+
+		% paragraph fall_ (end)
+
+		Damit gilt $a_m \leq b_n$ für alle $m,n \in \mathbb{N}$. Für alle $n \in \mathbb{N}$ ist also $(a_n)$ nach oben durch $b_n$ beschränkt. So ist auch für alle $n \in \mathbb{N}$ $(b_n)$ durch $a_n$ nach unten beschränkt. Da sich beide Folgen in den reellen Zahlen befinden existiert $\sup a_n$ und $\inf b_n$ für $n \in \mathbb{N}$. Damit folgt für alle $n \in \mathbb{N}$
+		\[
+			\sup a_n \in I_n
+		\]
+		\[
+			\inf b_n \in I_n
+		\]
+		\[
+			\Rightarrow \ S= \bigcap_{n\in \mathbb{N}} I_n = [\sup a_n, \inf b_n]
+		\]
+		Gilt nun $|I_n| \longrightarrow 0$, so folgt für alle $\varepsilon > 0$ gibt es ein $n_{\varepsilon} \in \mathbb{N}$, sodass für alle $n \geq n_{\varepsilon}$ gilt:
+		\[
+			b_n - a_n < \varepsilon \ \Rightarrow \ \inf b_n - \sup a_n = 0 \ \Rightarrow \ \inf b_n = \sup a_n
+		\]
+		Dann enthält $S$ genau einen Punkt.\\
+		Geht man davon aus, dass $S$ nur einen Punkt enthält, so folgt:
+		\[
+			\inf b_n = \sup a_n \ \Rightarrow \ \inf b_n - \sup a_n = 0 \ \Rightarrow \ |I_n| \longrightarrow 0
+		\]
+		Die Rückrichtung gilt also auch. Damit ist die Äquivalenz der Aussagen gezeigt. $\hfill\Box$\\
+
+		Als ein Beispiel soll hier 
+		\[
+			I_n := (1-\dfrac{1}{n}, 1), \ n \in \mathbb{N}
+		\]
+		benutzt werden (offensichtlich gilt $|I_n| \longrightarrow 0$). Es ist ersichtlich , dass $1$ für alle $n \in \mathbb{N}$ nie in $I_n$ liegen darf. Allerdings gilt $\sup 1-\frac{1}{n} = 1$. Dieses Supremum darf aber nicht Teil des Intervalls sein. $S$ kann also also nicht gegen den Punkt $1$ verlaufen. Es gilt $S = \varnothing$.
+
+	% subsection zusatzaufgabe_ (end)
+
+
+	\subsection*{Nikolausaufgabe} % (fold)
+	\label{sub:nikolausaufgabe}
+	
+		\begin{table}[h]
+		\center
+		\begin{tabular}{|c|r|r|}
+			\hline
+			Serie & Punkte & Prozentsatz der Serie [\%] \\
+			\hline \hline
+			1 & 15/16 & 93,75  \\
+			\hline
+			2 & 19/16 & 118,75  \\
+			\hline
+			3 & 14/16 & 87,50  \\
+			\hline
+			4 & 17/16 & 106,25  \\
+			\hline
+			5 & 14/16 & 87,50  \\
+			\hline
+			6 & 9/16 & 56,25  \\
+			\hline \hline
+			Gesamt & 88/96 & 91,6$\overline{6}$ \\
+			\hline
+		\end{tabular}
+		\end{table}
+
+		Schluss: Leider sind die 100\% nicht erreicht worden. Aus diesem Grund sollte man sich bei den meisten Aufgaben noch besser konzentrieren, um die Analysis an sich noch besser zu verstehen.
+
+	% subsection nikolausaufgabe (end)
+
+\end{document}
