@@ -1,0 +1,130 @@
+%\documentclass[12pt,a4paper]{article}
+%\usepackage{a4kopka}
+\documentclass[12pt,a4paper]{article}
+\usepackage{ngerman}
+%\usepackage{fleqn}
+\usepackage{array}
+\usepackage[latin1]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage{mathbbol}
+\usepackage{amstext}
+%\usepackage{fancyhdr}
+\usepackage{relsize}
+\usepackage{epic}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{a4wide}
+%\usepackage{eufrak}
+\usepackage{makeidx}%\usepackage{german}
+\usepackage{textcomp}
+
+\newcommand{\D}{\displaystyle}
+%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\IR}{{\mathbb{R}}}
+\newcommand{\IN}{{\mathbb{N}}}
+\newcommand{\IZ}{{\mathbb{Z}}}
+\newcommand{\IF}{{\mathbb{F}}}
+\newcommand{\IK}{{\mathbb{K}}}
+\newcommand{\IQ}{{\mathbb{Q}}}
+\newcommand{\IC}{{\mathbb{C}}}
+\newcommand{\IP}{{\mathbb{P}}}
+\newcommand{\IE}{{\mathbb{E}}}
+
+\newcommand{\ep}{{\varepsilon}}
+\newcommand{\ph}{{\varphi}}
+\newcommand{\thet}{{\vartheta}}
+\newcommand{\rh}{{\varrho}}
+\newcommand{\de}{{\delta}}
+\newcommand{\la}{{\lambda}}
+\newcommand{\Om}{{\Omega}}
+\newcommand{\al}{{\alpha}}
+\newcommand{\be}{{\beta}}
+\newcommand{\ga}{{\gamma}}
+\newcommand{\om}{{\omega}}
+\newcommand{\La}{{\Lambda}}
+\newcommand{\Ga}{{\Gamma}}
+\newcommand{\De}{{\Delta}}
+
+\newcommand{\foh}{{\mathfrak{h}}}
+
+\newcommand{\nach}{{\rightarrow}}
+\newcommand{\Nach}{{\,\rightarrow\,}}
+\newcommand{\Fou}{{\mathcal{F}}}
+\newcommand{\sk}{{\,|\,}}
+
+
+%\newcommand{\cosh}{\mbox{cosh}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remarks}[theorem]{Remarks}
+%%%%%%%%%%%%%%%%%%%%
+
+\addtolength{\voffset}{-15pt} \addtolength{\textheight}{-10pt}
+%\addtolength{\textheight}{-11pt} \addtolength{\headsep}{6pt}
+
+\setlength{\parskip}{10pt plus 2pt minus 1pt}
+\setlength{\parindent}{0pt}
+\newcommand{\wk}{\mbox{$\,<$\hspace{-5pt}\footnotesize )$\,$}}
+\thispagestyle{empty} \addtolength{\voffset}{15pt}
+
+
+
+\begin{document}
+
+\rule{\textwidth}{0.3pt}
+\begin{center}
+\textbf{\large H\"ohere Analysis I}
+\end{center}
+\textbf{Sommersemester 2015 \hfill Prof. Dr. D. Lenz}
+
+\rule{\textwidth}{0.3pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Hier geht's los
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Blatt 7}\hfill % Nr des Blatts
+\textbf{Abgabe Dienstag 09.06.2015}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item[(1)] Zeigen Sie, dass jeder endlichdimensionale Teilraum eines Hilbertraumes abgeschlossen ist.
+
+\item[(2)] Zeigen Sie, dass das orthogonale Komplement einer beliebigen Menge in einem  Vektorraum mit Skalarprodukt ein abgeschlossener Unterraum ist.
+
+\item[(3)] Es sei $H$ ein Hilbertraum und $U,V\subseteq H$ abgeschlossene Unterr\"aume. Weiterhin seien $P_U,P_V$ die zugeh\"origen Orthogonalprojektionen. Zeigen Sie folgende Aussagen.
+\begin{itemize}
+\item[(a)] Es gilt $P_UP_V=0$ genau dann, wenn $U\perp V$.
+\item[(b)] Es ist $P_U+P_V$ eine Orthogonalprojektion genau dann, wenn $P_UP_V=0$.
+\item[(c)] Es ist $P_UP_V$ eine Orthogonalprojektion genau dann, wenn $P_UP_V=P_VP_U$.
+\item[(d)] Es gilt $P_UP_V=P_V$ genau dann, wenn $V\subseteq U$.
+\item[(e)] Es ist $P_U-P_V$ eine Orthogonalprojektion genau dann, wenn $V\subseteq U$.
+\item[(f)] Es gilt $P_UP_V=P_V$ genau dann, wenn f\"ur alle $x\in H$ die Ungleichung $\|P_Vx\|\leq\|P_Ux\|$ gilt. 
+\end{itemize}
+\item[(4)] Es sei $(e_n)_{n\in\mathbb{N}}$ ein Orthonormalsystem in dem Hilbertraum $H$ mit Skalarprodukt $\langle\cdot,\cdot\rangle:H \times H\to \mathbb{C}$. 
+\begin{itemize}
+\item[(a)] Zeigen Sie, dass $(e_n)$ schwach gegen Null konvergiert (also f\"ur alle $x\in H$ gilt $\lim\limits_{n\to\infty}\langle x,e_n\rangle=0$).
+\item[(b)] Zeigen Sie, dass $(e_n)$ nicht in Norm gegen $0$ konvergiert.
+\end{itemize}
+
+\textbf{Zusatz}\\
+Gegeben sei ein Hilbertraum $H$ mit Skalarprodukt $\langle\cdot,\cdot\rangle:H \times H\to \mathbb{C}$. Zeigen Sie die folgenden Aussagen.
+\begin{itemize}
+\item[(a)] Ist $(e_\alpha)_{\alpha\in I}$ ein Orthonormalsystem in $H$ für eine gegebenene Indexmenge $I$, dann gilt 
+$$
+\|e_\alpha-e_\beta\|=2,\qquad \alpha\neq\beta.
+$$
+\item[(b)] Gibt es eine abz\"ahlbare Orthonormalbasis von $H$, so gibt es eine abz\"ahlbare dichte Teilmenge von $H$.
+\item[(c)] Falls $H$ eine Orthonormalbasis $(e_\alpha)_{\alpha\in I}$ mit \"uberabz\"ahlbarer Indexmenge besitzt, dann gibt es keine abz\"ahlbare Orthonormalbasis f\"ur $H$.
+\end{itemize}
+\end{itemize}
+
+
+\end{document}

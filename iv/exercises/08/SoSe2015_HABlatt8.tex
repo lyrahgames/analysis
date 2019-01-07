@@ -1,0 +1,147 @@
+%\documentclass[12pt,a4paper]{article}
+%\usepackage{a4kopka}
+\documentclass[12pt,a4paper]{article}
+\usepackage{ngerman}
+%\usepackage{fleqn}
+\usepackage{array}
+\usepackage[latin1]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage{mathbbol}
+\usepackage{amstext}
+%\usepackage{fancyhdr}
+\usepackage{relsize}
+\usepackage{epic}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{a4wide}
+%\usepackage{eufrak}
+\usepackage{makeidx}%\usepackage{german}
+\usepackage{textcomp}
+
+\newcommand{\D}{\displaystyle}
+%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\IR}{{\mathbb{R}}}
+\newcommand{\IN}{{\mathbb{N}}}
+\newcommand{\IZ}{{\mathbb{Z}}}
+\newcommand{\IF}{{\mathbb{F}}}
+\newcommand{\IK}{{\mathbb{K}}}
+\newcommand{\IQ}{{\mathbb{Q}}}
+\newcommand{\IC}{{\mathbb{C}}}
+\newcommand{\IP}{{\mathbb{P}}}
+\newcommand{\IE}{{\mathbb{E}}}
+
+\newcommand{\ep}{{\varepsilon}}
+\newcommand{\ph}{{\varphi}}
+\newcommand{\thet}{{\vartheta}}
+\newcommand{\rh}{{\varrho}}
+\newcommand{\de}{{\delta}}
+\newcommand{\la}{{\lambda}}
+\newcommand{\Om}{{\Omega}}
+\newcommand{\al}{{\alpha}}
+\newcommand{\be}{{\beta}}
+\newcommand{\ga}{{\gamma}}
+\newcommand{\om}{{\omega}}
+\newcommand{\La}{{\Lambda}}
+\newcommand{\Ga}{{\Gamma}}
+\newcommand{\De}{{\Delta}}
+
+\newcommand{\foh}{{\mathfrak{h}}}
+
+\newcommand{\nach}{{\rightarrow}}
+\newcommand{\Nach}{{\,\rightarrow\,}}
+\newcommand{\Fou}{{\mathcal{F}}}
+\newcommand{\sk}{{\,|\,}}
+
+
+%\newcommand{\cosh}{\mbox{cosh}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remarks}[theorem]{Remarks}
+%%%%%%%%%%%%%%%%%%%%
+
+\addtolength{\voffset}{-15pt} \addtolength{\textheight}{-10pt}
+%\addtolength{\textheight}{-11pt} \addtolength{\headsep}{6pt}
+
+\setlength{\parskip}{10pt plus 2pt minus 1pt}
+\setlength{\parindent}{0pt}
+\newcommand{\wk}{\mbox{$\,<$\hspace{-5pt}\footnotesize )$\,$}}
+\thispagestyle{empty} \addtolength{\voffset}{15pt}
+
+
+
+\begin{document}
+
+\rule{\textwidth}{0.3pt}
+\begin{center}
+\textbf{\large H\"ohere Analysis I}
+\end{center}
+\textbf{Sommersemester 2015 \hfill Prof. Dr. D. Lenz}
+
+\rule{\textwidth}{0.3pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Hier geht's los
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Blatt 8}\hfill % Nr des Blatts
+\textbf{Abgabe Dienstag 23.06.2015}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item[(1)] Gegeben seien  Hilbertr\"aume $H$, $K$ und $L$.
+
+(a) Zeigen Sie f\"ur  alle beschr\"anken linearen Operatoren $A,B$
+von $H$ nach $K$  und $\lambda \in \mathbb{K}$ die Aussagen:
+$$(A^\ast)^\ast=A\;\:\mbox{und}\;\: (A+\lambda B)^\ast= A^\ast +
+ \overline{\lambda}B^\ast.$$
+
+(b) Zeigen Sie f\"ur alle beschr\"ankten linearen Operatoren $A$ von
+$K$ nach $L$ und $B$ von $H$ nach $K$ $$(AB)^\ast=B^\ast A^\ast.$$
+
+
+\item[(2)]  Gegeben seien  Hilbertr\"aume $H$, $K$ und $L$. Zeigen
+Sie:
+
+(a) F\"ur alle  beschr\"ankten linearen Operatoren $A,B$ von $H$
+nach $K$ gilt $\| A + B\|\leq \|A\| + \|B\|.$
+
+(b) F\"ur alle beschr\"ankten linearen  Operatoren $A$ von $H$ nach
+$K$ und $B$ von $K$ nach $L$ gilt $\| B A\| \leq \|B\| \|A\|$.
+
+
+
+\item[(3)] Sei $ \varphi : \IN\longrightarrow \IR$ beschraenkt und
+$$M_\varphi : \ell^2 \longrightarrow \ell^2, \;\: f\mapsto \varphi f,$$ der Operator der
+Multiplikation mit $\varphi$. Bestimmen Sie das Spektrum von
+$M_\varphi$.
+
+
+
+\item[(4)] Sei $H$ ein Hilbertraum und $T$ ein linearer beschr\"ankter Operator von $H$ nach $H$.
+Zeigen Sie: Gilt $\|T\|<1$, so ist $I - T$ invertierbar mit Inverser
+gegeben durch  $(I-T)^{-1}=\sum_{k=0}^\infty T^k$.
+
+\end{itemize}
+
+
+
+
+\textbf{Zusatzaufgabe.}\\
+In einem Hilbertraum $H$ enth\"alt jede beschr\"ankte Folge $(x_n)$
+eine Teilfolge $(x_{n_k})$, sodass für jedes $y\in H$ die Folge
+$k\mapsto \langle x_{n_k},y\rangle$ konvergiert.
+
+\underline{Hinweis:} Es reicht (Warum?) sich auf den separablen Fall
+zu beschr\"anken.
+
+
+
+
+\end{document}

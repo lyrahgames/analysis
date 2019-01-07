@@ -1,0 +1,120 @@
+%\documentclass[12pt,a4paper]{article}
+%\usepackage{a4kopka}
+\documentclass[12pt,a4paper]{article}
+\usepackage{ngerman}
+%\usepackage{fleqn}
+\usepackage{array}
+\usepackage[latin1]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage{mathbbol}
+\usepackage{amstext}
+%\usepackage{fancyhdr}
+\usepackage{relsize}
+\usepackage{epic}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{a4wide}
+%\usepackage{eufrak}
+\usepackage{makeidx}%\usepackage{german}
+\usepackage{textcomp}
+
+\newcommand{\D}{\displaystyle}
+%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\IR}{{\mathbb{R}}}
+\newcommand{\IN}{{\mathbb{N}}}
+\newcommand{\IZ}{{\mathbb{Z}}}
+\newcommand{\IF}{{\mathbb{F}}}
+\newcommand{\IK}{{\mathbb{K}}}
+\newcommand{\IQ}{{\mathbb{Q}}}
+\newcommand{\IC}{{\mathbb{C}}}
+\newcommand{\IP}{{\mathbb{P}}}
+\newcommand{\IE}{{\mathbb{E}}}
+
+\newcommand{\ep}{{\varepsilon}}
+\newcommand{\ph}{{\varphi}}
+\newcommand{\thet}{{\vartheta}}
+\newcommand{\rh}{{\varrho}}
+\newcommand{\de}{{\delta}}
+\newcommand{\la}{{\lambda}}
+\newcommand{\Om}{{\Omega}}
+\newcommand{\al}{{\alpha}}
+\newcommand{\be}{{\beta}}
+\newcommand{\ga}{{\gamma}}
+\newcommand{\om}{{\omega}}
+\newcommand{\La}{{\Lambda}}
+\newcommand{\Ga}{{\Gamma}}
+\newcommand{\De}{{\Delta}}
+
+\newcommand{\foh}{{\mathfrak{h}}}
+
+\newcommand{\nach}{{\rightarrow}}
+\newcommand{\Nach}{{\,\rightarrow\,}}
+\newcommand{\Fou}{{\mathcal{F}}}
+\newcommand{\sk}{{\,|\,}}
+
+
+%\newcommand{\cosh}{\mbox{cosh}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remarks}[theorem]{Remarks}
+%%%%%%%%%%%%%%%%%%%%
+
+\addtolength{\voffset}{-15pt} \addtolength{\textheight}{-10pt}
+%\addtolength{\textheight}{-11pt} \addtolength{\headsep}{6pt}
+
+\setlength{\parskip}{10pt plus 2pt minus 1pt}
+\setlength{\parindent}{0pt}
+\newcommand{\wk}{\mbox{$\,<$\hspace{-5pt}\footnotesize )$\,$}}
+\thispagestyle{empty} \addtolength{\voffset}{15pt}
+
+
+
+\begin{document}
+
+\rule{\textwidth}{0.3pt}
+\begin{center}
+\textbf{\large H\"ohere Analysis I}
+\end{center}
+\textbf{Sommersemester 2015 \hfill Prof. Dr. D. Lenz}
+
+\rule{\textwidth}{0.3pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Hier geht's los
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Blatt 6}\hfill % Nr des Blatts
+\textbf{Abgabe Dienstag 02.06.2015}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item[(1)] Finden Sie jeweils ein Beispiel eines Hilbertraumes $(H,\langle\cdot,\cdot \rangle)$ und einer Teilmenge $A\subseteq H$ mit einem $x\in H\setminus A$, so dass gilt:
+    \begin{itemize}
+    \item[(a)] $A$ ist konvex aber nicht abgeschlossen und es gibt keine beste Approximation von $x$ in $A$.
+    \item[(b)] $A$ ist abgeschlossen aber nicht konvex und es gibt mehr als eine beste Approximation von $x$ in $A$.
+    \item[(c)] $A$ ist abgeschlossen aber nicht konvex und es gibt keine beste Approximation von $x$ in $A$.
+    \end{itemize}
+Können Sie in (c) auch ein Beispiel mit einem endlich dimensionalen Hilbertraum angeben?
+
+\item[(2)] Zeigen Sie, dass der Approximationssatz in $\ell^\infty$ nicht gilt.\\
+\underline{Hinweis:} Finden Sie eine Teilmenge von $\ell^\infty$, so dass es zu gegebenen $x\in \ell^\infty$ mehrere beste Approximationen gibt.
+
+\item[(3)] Gegeben sei ein Vektorraum $X$ mit einem Semi-Skalarprodukt $\langle\cdot,\cdot \rangle$ und $N:=\{x\in X\;|\; \langle x,x\rangle =0\}$. Zeigen Sie, dass auf dem Quotientenraum $X/N$ durch
+	$$
+	\langle [x],[y]\rangle:=\langle x,y\rangle
+	$$
+	für Elemente $[x], [y]\in X/N$ ein Skalarprodukt definiert wird.
+
+\item[(4)] Sei $(H,\langle\cdot,\cdot \rangle)$ ein Hilbertraum und $P:H\to H$ eine lineare Abbildung. Zeigen Sie folgende Aussage. Es ist $P$ genau dann die orthogonale Projektion auf einen abgeschlossenen Unterraum, wenn $P=P^2$ und  $\langle Pu,v\rangle = \langle u,Pv\rangle$ f\"ur alle $u,v \in H$ gilt. 
+
+\end{itemize}
+
+
+\end{document}

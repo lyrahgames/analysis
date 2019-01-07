@@ -1,0 +1,148 @@
+%\documentclass[12pt,a4paper]{article}
+%\usepackage{a4kopka}
+\documentclass[12pt,a4paper]{article}
+\usepackage{ngerman}
+%\usepackage{fleqn}
+\usepackage{array}
+\usepackage[latin1]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage{mathbbol}
+\usepackage{amstext}
+%\usepackage{fancyhdr}
+\usepackage{relsize}
+\usepackage{epic}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{a4wide}
+%\usepackage{eufrak}
+\usepackage{makeidx}%\usepackage{german}
+\usepackage{textcomp}
+
+\newcommand{\D}{\displaystyle}
+%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\IR}{{\mathbb{R}}}
+\newcommand{\IN}{{\mathbb{N}}}
+\newcommand{\IZ}{{\mathbb{Z}}}
+\newcommand{\IF}{{\mathbb{F}}}
+\newcommand{\IK}{{\mathbb{K}}}
+\newcommand{\IQ}{{\mathbb{Q}}}
+\newcommand{\IC}{{\mathbb{C}}}
+\newcommand{\IP}{{\mathbb{P}}}
+\newcommand{\IE}{{\mathbb{E}}}
+
+\newcommand{\ep}{{\varepsilon}}
+\newcommand{\ph}{{\varphi}}
+\newcommand{\thet}{{\vartheta}}
+\newcommand{\rh}{{\varrho}}
+\newcommand{\de}{{\delta}}
+\newcommand{\la}{{\lambda}}
+\newcommand{\Om}{{\Omega}}
+\newcommand{\al}{{\alpha}}
+\newcommand{\be}{{\beta}}
+\newcommand{\ga}{{\gamma}}
+\newcommand{\om}{{\omega}}
+\newcommand{\La}{{\Lambda}}
+\newcommand{\Ga}{{\Gamma}}
+\newcommand{\De}{{\Delta}}
+
+\newcommand{\foh}{{\mathfrak{h}}}
+
+\newcommand{\nach}{{\rightarrow}}
+\newcommand{\Nach}{{\,\rightarrow\,}}
+\newcommand{\Fou}{{\mathcal{F}}}
+\newcommand{\sk}{{\,|\,}}
+
+
+%\newcommand{\cosh}{\mbox{cosh}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remarks}[theorem]{Remarks}
+%%%%%%%%%%%%%%%%%%%%
+
+\addtolength{\voffset}{-15pt} \addtolength{\textheight}{-10pt}
+%\addtolength{\textheight}{-11pt} \addtolength{\headsep}{6pt}
+
+\setlength{\parskip}{10pt plus 2pt minus 1pt}
+\setlength{\parindent}{0pt}
+\newcommand{\wk}{\mbox{$\,<$\hspace{-5pt}\footnotesize )$\,$}}
+\thispagestyle{empty} \addtolength{\voffset}{15pt}
+
+
+
+\begin{document}
+
+\rule{\textwidth}{0.3pt}
+\begin{center}
+\textbf{\large H\"ohere Analysis I}
+\end{center}
+\textbf{Sommersemester 2015 \hfill Prof. Dr. D. Lenz}
+
+\rule{\textwidth}{0.3pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Hier geht's los
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Blatt 10}\hfill % Nr des Blatts
+\textbf{Abgabe Dienstag 07.07.2015}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item[(1)]  Sei $(X,d)$ ein metrischer Raum. Der Vektorraum $C_0(X)$ ist definiert als die Menge aller stetigen Funktionen $f:X\to\IC$, sodass f\"ur jedes $\varepsilon>0$ eine kompakte Teilmenge $K_\varepsilon\subset X$ existiert mit $|f(x)|\leq\varepsilon$ f\"ur alle $x\not\in K_\varepsilon$. Zeigen Sie die folgenden Aussagen.
+\begin{itemize}
+\item[(a)] F\"ur $X=\IR$ ausgestattet mit der euklidischen Metrik gilt die Gleichheit 
+$$C_0(\IR)=\{f:\IR\to\IC\;|\; f\text{ stetig mit } \lim\limits_{x\to\pm\infty} f(x)=0\}.$$
+\item[(b)] F\"ur $X=\IN$ mit der diskreten Metrik gilt die Gleichheit 
+$$C_0(\IN)=\{f:\IN\to\IC\;|\; \lim\limits_{n\to\infty} f(n)=0\}.$$
+\end{itemize}
+
+\item[(2)] Sei $\nu$ ein positives Ma\3 und
+$\mu$ ein komplexes Ma\3 auf dem Ma\ss raum $(X,\mathcal{A})$. Zeigen Sie, dass folgende Aussagen \"aquivalent sind.
+
+\begin{itemize}
+\item[(i)] Es ist $\mu$ absolut stetig bez\"uglich $\nu$.
+\item[(ii)] Zu jedem $\varepsilon >0$ existiert ein $\delta>0$ mit $|\mu (E)|< \varepsilon$ falls $E\in\mathcal{A}$ und $\nu (E) < \delta$.
+\end{itemize}
+
+\item[(3)] Sei $\nu$ ein positives Ma\3\, auf dem Ma\ss raum $(X,\mathcal{A})$, $h\in\mathcal{L}^1 (X,\nu)$ und $S\subset \mathbb{C}$ eine abgeschlossene Teilmenge mit
+$$\frac{1}{\nu (E)} \int_E h d\nu \in S$$
+f\"ur alle me\3baren $E$ mit $\nu (E) >0$. Zeigen Sie, dass $h$ fast sicher nur Werte in $S$ annimmt.
+
+\item[(4)] Ein lineares Funktional $\varphi: \ell^\infty(\IN) \to \IR$ hei\ss t Banachlimes, wenn $\varphi$ folgende drei Eigenschaften erf\"ullt:
+\begin{itemize}
+\item[(i)] Es gilt $\varphi \circ S = \varphi$ f\"ur den Linksshift $S(x_1,x_2,\dots):= (x_2, x_3, \dots)$,
+\item[(ii)] Sind alle $x_k \geq 0$, so ist $\varphi(x)\geq 0$,
+\item[(iii)] F\"ur die Folge $e = (1,1,\dots)$ ist $\varphi(e)=1$.
+\end{itemize}
+Zeigen Sie:
+\begin{itemize}
+\item[(a)] Ist $\varphi : \ell^\infty(\IN) \to \IR$ ein Banachlimes, so gilt:
+\begin{itemize}
+\item[(1)]F\"ur alle $x=(x_n)\in \ell^\infty(\IN)$ ist $\liminf x_n \leq \varphi(x)\leq \limsup x_n$.
+\item[(2)]$\varphi$ ist stetig mit Norm $\|\varphi\| =1$.
+\item[(3)]$\varphi$ ist nicht multiplikativ, d.h. es existieren $x,y \in \ell^\infty(\IN)$ mit $\varphi(x)\varphi(y) \neq \varphi(x\cdot y)$.
+\end{itemize}
+\item[(b)]Es gibt Banachlimiten.\\
+\underline{Hinweis:} Betrachten Sie den Untervektorraum $U:=\{x\in \ell^\infty(\IN):  \lim x_n \mbox{ existiert}\}$ und setzen Sie ein geeignetes lineares Funktional bez\"uglich dem sublinearen Funktional $p(x):= \limsup\frac{1}{n} \sum_{i=0}^{n-1} x_i$ fort.
+\end{itemize}
+
+\end{itemize}
+
+
+
+
+\textbf{Zusatzaufgabe.}\\
+Sei $(X,\mathcal{A})$ ein Ma\ss raum und $\mu$ ein komplexes Ma\3 auf $\mathcal{A}$. Definiere die Abbildung $|\mu|:\mathcal{A}\to [0,\infty]$ durch
+
+$$|\mu| (E): = \sup \left\{ \left.\sum\limits_{n\in\mathbb{N}} |\mu (E_n)|\;\right|\; (E_n) \text{ Zerlegung von } E\right\},\qquad E\in\mathcal{A}.$$
+Zeigen Sie, dass $|\mu|$ eine $\sigma$-additive Abbildung ist.
+
+
+\end{document}

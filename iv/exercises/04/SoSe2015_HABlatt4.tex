@@ -1,0 +1,126 @@
+%\documentclass[12pt,a4paper]{article}
+%\usepackage{a4kopka}
+\documentclass[12pt,a4paper]{article}
+\usepackage{ngerman}
+%\usepackage{fleqn}
+\usepackage{array}
+\usepackage[latin1]{inputenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+%\usepackage{mathbbol}
+\usepackage{amstext}
+%\usepackage{fancyhdr}
+\usepackage{relsize}
+\usepackage{epic}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{a4wide}
+%\usepackage{eufrak}
+\usepackage{makeidx}%\usepackage{german}
+\usepackage{textcomp}
+
+\newcommand{\D}{\displaystyle}
+%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\IR}{{\mathbb{R}}}
+\newcommand{\IN}{{\mathbb{N}}}
+\newcommand{\IZ}{{\mathbb{Z}}}
+\newcommand{\IF}{{\mathbb{F}}}
+\newcommand{\IK}{{\mathbb{K}}}
+\newcommand{\IQ}{{\mathbb{Q}}}
+\newcommand{\IC}{{\mathbb{C}}}
+\newcommand{\IP}{{\mathbb{P}}}
+\newcommand{\IE}{{\mathbb{E}}}
+
+\newcommand{\ep}{{\varepsilon}}
+\newcommand{\ph}{{\varphi}}
+\newcommand{\thet}{{\vartheta}}
+\newcommand{\rh}{{\varrho}}
+\newcommand{\de}{{\delta}}
+\newcommand{\la}{{\lambda}}
+\newcommand{\Om}{{\Omega}}
+\newcommand{\al}{{\alpha}}
+\newcommand{\be}{{\beta}}
+\newcommand{\ga}{{\gamma}}
+\newcommand{\om}{{\omega}}
+\newcommand{\La}{{\Lambda}}
+\newcommand{\Ga}{{\Gamma}}
+\newcommand{\De}{{\Delta}}
+
+\newcommand{\foh}{{\mathfrak{h}}}
+
+\newcommand{\nach}{{\rightarrow}}
+\newcommand{\Nach}{{\,\rightarrow\,}}
+\newcommand{\Fou}{{\mathcal{F}}}
+\newcommand{\sk}{{\,|\,}}
+
+
+%\newcommand{\cosh}{\mbox{cosh}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remarks}[theorem]{Remarks}
+%%%%%%%%%%%%%%%%%%%%
+
+\addtolength{\voffset}{-15pt} \addtolength{\textheight}{-10pt}
+%\addtolength{\textheight}{-11pt} \addtolength{\headsep}{6pt}
+
+\setlength{\parskip}{10pt plus 2pt minus 1pt}
+\setlength{\parindent}{0pt}
+\newcommand{\wk}{\mbox{$\,<$\hspace{-5pt}\footnotesize )$\,$}}
+\thispagestyle{empty} \addtolength{\voffset}{15pt}
+
+
+
+\begin{document}
+
+\rule{\textwidth}{0.3pt}
+\begin{center}
+\textbf{\large H\"ohere Analysis I}
+\end{center}
+\textbf{Sommersemester 2015 \hfill Prof. Dr. D. Lenz}
+
+\rule{\textwidth}{0.3pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Hier geht's los
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textbf{Blatt 4}\hfill % Nr des Blatts
+\textbf{Abgabe Dienstag 19.05.2015}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{itemize}
+\item[(1)] Sei $\mathbb{R}$ ausgestattet mit der Borel $\sigma$-algebra und dem Lebesguema\ss $\,\lambda$. Zeigen Sie, dass für $p,q\in\mathbb{N}$ beliebig mit $p\neq q$ nicht die Inklusion $L^p(\mathbb{R},\mathcal{B}(\mathbb{R}),\lambda)\subseteq L^q(\mathbb{R},\mathcal{B}(\mathbb{R}),\lambda)$ gilt.
+\item[(2)] Gegeben sei der Raum $\mathcal{C}([0,1])$ der stetigen Funktionen auf den Intervall $[0,1]$.
+    \begin{itemize}
+    \item[(a)] Zeigen Sie, dass 
+    $$
+    \langle f,g\rangle:=\int\limits_0^1 f(x) \overline{g(x)}\; dx,\qquad f,g\in \mathcal{C}([0,1]),
+    $$
+    ein Skalarprodukt auf $\mathcal{C}([0,1])$ ist.
+    \item[(b)] Beweisen Sie, dass $\mathcal{C}([0,1])$ mit dem eben definierten Skalarprodukt kein Hilbertraum ist.
+    \end{itemize}
+
+\item[(3)] Zeigen Sie:
+
+\begin{itemize}
+\item[(a)] Die Normen $\|\cdot\|_p$ auf $\ell^p$ werden f\"ur $p\neq 2$ nicht von einem Skalarprodukt induziert.
+\item[(b)] Die Supremumsnorm auf $C([0,1])$ wird nicht durch ein Skalarprodukt induziert.
+\end{itemize}
+\underline{Hinweis:} In Hilberträumen gilt die Parallelogrammidentität.
+
+\item[(4)] Sei $V$ ein Vektorraum und $s$ ein Skalarprodukt auf $V$. Zeigen Sie, dass
+%
+$$ |s(x,y)| = s(x,x)^{\frac{1}{2}}s(y,y)^{\frac{1}{2}}$$
+%
+genau dann gilt, wenn $x$ und $y$ linear abh\"angig sind.
+
+\end{itemize}
+
+
+\end{document}
